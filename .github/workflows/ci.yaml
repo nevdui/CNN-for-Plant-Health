@@ -38,3 +38,16 @@ jobs:
           toolchain: stable
           profile: minimal
           components: clippy
+          override: true
+      - run: cargo clippy --all-features -- -D warnings # Deny clippy warnings
+
+  miri:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Miri
+        run: |
+          rustup toolchain install nightly --component miri
+          rustup override set nightly
+          cargo miri setup
+      - run: cargo miri test --all-features --verbose
