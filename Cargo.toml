@@ -1,4 +1,5 @@
 [package]
 name = "ghost-cell"
 version = "0.2.3"
-authors = ["Matthieu M. <matthieum
+authors = ["Matthieu M. <matthieum.147192@gmail.com>"]
+edition = "2021"
