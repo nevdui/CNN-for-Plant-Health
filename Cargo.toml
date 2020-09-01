@@ -7,4 +7,6 @@ description = "Compile-time zero-cost borrow-checking of aliased references"
 repository = "https://github.com/matthieu-m/ghost-cell"
 license = "MIT OR Apache-2.0"
 keywords = ["experimental", "aliasing", "borrowing"]
-categ
+categories = ["memory-management", "no-std"]
+
+[features
