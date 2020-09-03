@@ -9,4 +9,5 @@ license = "MIT OR Apache-2.0"
 keywords = ["experimental", "aliasing", "borrowing"]
 categories = ["memory-management", "no-std"]
 
-[features
+[features]
+# Enables the use of the unproven
