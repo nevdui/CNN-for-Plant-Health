@@ -10,4 +10,5 @@ keywords = ["experimental", "aliasing", "borrowing"]
 categories = ["memory-management", "no-std"]
 
 [features]
-# Enables the use of the unproven
+# Enables the use of the unproven GhostCursor.
+experimental-ghost-curso
