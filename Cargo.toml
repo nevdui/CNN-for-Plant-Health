@@ -11,4 +11,5 @@ categories = ["memory-management", "no-std"]
 
 [features]
 # Enables the use of the unproven GhostCursor.
-experimental-ghost-curso
+experimental-ghost-cursor = []
+# Enables the use of unproven m
