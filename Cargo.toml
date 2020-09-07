@@ -12,4 +12,5 @@ categories = ["memory-management", "no-std"]
 [features]
 # Enables the use of the unproven GhostCursor.
 experimental-ghost-cursor = []
-# Enables the use of unproven m
+# Enables the use of unproven multiple mutable borrows.
+experimenta
