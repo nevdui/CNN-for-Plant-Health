@@ -42,3 +42,40 @@ Tests:
 
 -   All non-trivial methods are tested, via their examples.
 -   All methods with safety invariants are covered with compile-fail tests.
+-   The entire test-suite, including examples, runs under Miri.
+
+
+#   How to use?
+
+Let's start with a self-contained example:
+
+```rust
+use ghost_cell::{GhostToken, GhostCell};
+
+fn demo(n: usize) {
+    let value = GhostToken::new(|mut token| {
+        let cell = GhostCell::new(42);
+
+        let vec: Vec<_> = (0..n).map(|_| &cell).collect();
+
+        *vec[n / 2].borrow_mut(&mut token) = 33;
+
+        *cell.borrow(&token)
+    });
+
+    assert_eq!(value, 33);
+}
+```
+
+`GhostToken` uses the best known way to generate a unique lifetime, hence used as a brand, which is to combine:
+
+-   A local variable, created within the `GhostToken::new` method.
+-   A closure which must be valid for all lifetimes.
+
+This means 2 restrictions:
+
+-   The closure must be variant over the lifetimes, this does not always play well with closures already containing
+    references.
+-   None of the branded items can be returned by the closure.
+
+Then, within the closure, any `GhostCell` can be associated to one, and only one, `GhostToken` which will encode its
