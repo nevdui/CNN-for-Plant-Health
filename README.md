@@ -79,3 +79,33 @@ This means 2 restrictions:
 -   None of the branded items can be returned by the closure.
 
 Then, within the closure, any `GhostCell` can be associated to one, and only one, `GhostToken` which will encode its
+borrowing permissions:
+
+-   `&GhostToken<'brand>` is the key to using `GhostCell<'brand, T>::borrow` -- note the matching `'brand` -- and
+    allows obtaining a `&T` reference.
+-   `&mut GhostToken<'brand>` is the key to using `GhostCell<'brand, T>::borrow_mut` and allows obtaining a `&mut T`
+    reference.
+
+Using `borrow` or `borrow_mut` borrow _both_ the cell and the token.
+
+
+#   So what?
+
+A `GhostCell` is a safe, zero-cost, cell. It allows aliasing with compile-time checked borrow-checking.
+
+Combined with [`StaticRc`](https://crates.io/crates/static-rc), it allows writing doubly linked lists, binary trees and
+B-trees with parent pointers, etc... in safe, stable, Rust.
+
+
+#   Other Cells
+
+There are other cells in existence, performing a similar function with different trade-offs:
+
+-   The standard `Cell` and `RefCell`.
+-   The multiple cells of the [`qcell` crate](https://crates.io/crates/qcell), of which `LCell` is based on discussions
+    with the author of `GhostCell`, sharing a similar idea.
+
+
+#   That's all folks!
+
+And thanks for reading.
