@@ -50,3 +50,46 @@ impl<'a, 'brand, T> GhostBorrow<'a, 'brand> for &'a [GhostCell<'brand, T>] {
         unsafe { mem::transmute::<Self, Self::Result>(self) }
     }
 }
+
+impl<'a, 'brand, T, const N: usize> GhostBorrow<'a, 'brand> for &'a [GhostCell<'brand, T>; N] {
+    type Result = &'a [T; N];
+
+    fn borrow(self, _: &'a GhostToken<'brand>) -> Self::Result {
+        //  Safety:
+        //  -   Shared access to the `GhostToken` ensures shared access to the cells' content.
+        //  -   `GhostCell` is `repr(transparent)`, hence `T` and `GhostCell<T>` have the same memory representation.
+        unsafe { mem::transmute::<Self, Self::Result>(self) }
+    }
+}
+
+impl<'a, 'brand, T: ?Sized, const N: usize> GhostBorrow<'a, 'brand> for [&'a GhostCell<'brand, T>; N] {
+    type Result = [&'a T; N];
+
+    fn borrow(self, _: &'a GhostToken<'brand>) -> Self::Result {
+        //  Safety:
+        //  -   `[&'a GhostCell<'brand, T>; N]` and `[&'a T; N]` have the same size.
+        //  -   `[&'a GhostCell<'brand, T>; N]` implements `Copy`, so no `mem::forget` is needed.
+        //  -   We can't use `mem::transmute`, because of https://github.com/rust-lang/rust/issues/61956.
+        unsafe { ptr::read(&self as *const _ as *const Self::Result) }
+    }
+}
+
+macro_rules! last {
+    () => {};
+    ($head:ident $(,)?) => {
+        $head
+    };
+    ($head:ident, $($tail:ident),+ $(,)?) => {
+        last!($($tail),+)
+    };
+}
+
+macro_rules! generate_public_instance {
+    ( $($name:ident),* ; $($type_letter:ident),* ) => {
+        impl<'a, 'brand, $($type_letter: ?Sized,)*> GhostBorrow<'a, 'brand>
+            for ( $(&'a GhostCell<'brand, $type_letter>, )* )
+        {
+            type Result = ( $(&'a $type_letter, )* );
+
+            fn borrow(self, token: &'a GhostToken<'brand>) -> Self::Result {
+                let ($($name,)*) = self;
