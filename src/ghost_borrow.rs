@@ -93,3 +93,34 @@ macro_rules! generate_public_instance {
 
             fn borrow(self, token: &'a GhostToken<'brand>) -> Self::Result {
                 let ($($name,)*) = self;
+
+                ( $( $name.borrow(token),)* )
+            }
+        }
+
+        impl<'a, 'brand, $($type_letter,)*> GhostBorrow<'a, 'brand>
+            for &'a ( $(GhostCell<'brand, $type_letter>, )* )
+        where
+            last!( $($type_letter),* ): ?Sized
+        {
+            type Result = &'a ( $($type_letter, )* );
+
+            fn borrow(self, _: &'a GhostToken<'brand>) -> Self::Result {
+                //  Safety:
+                //  -   Exclusive access to the `GhostToken` ensures exclusive access to the cells' content.
+                //  -   `GhostCell` is `repr(transparent)`, hence `T` and `GhostCell<T>` have the same memory representation.
+                unsafe { core::mem::transmute::<Self, Self::Result>(self) }
+            }
+        }
+    };
+}
+
+generate_public_instance!(a ; T0);
+generate_public_instance!(a, b ; T0, T1);
+generate_public_instance!(a, b, c ; T0, T1, T2);
+generate_public_instance!(a, b, c, d ; T0, T1, T2, T3);
+generate_public_instance!(a, b, c, d, e ; T0, T1, T2, T3, T4);
+generate_public_instance!(a, b, c, d, e, f ; T0, T1, T2, T3, T4, T5);
+generate_public_instance!(a, b, c, d, e, f, g ; T0, T1, T2, T3, T4, T5, T6);
+generate_public_instance!(a, b, c, d, e, f, g, h ; T0, T1, T2, T3, T4, T5, T6, T7);
+generate_public_instance!(a, b, c, d, e, f, g, h, i ; T0, T1, T2, T3, T4, T5, T6, T7, T8);
