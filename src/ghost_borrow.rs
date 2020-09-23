@@ -124,3 +124,31 @@ generate_public_instance!(a, b, c, d, e, f ; T0, T1, T2, T3, T4, T5);
 generate_public_instance!(a, b, c, d, e, f, g ; T0, T1, T2, T3, T4, T5, T6);
 generate_public_instance!(a, b, c, d, e, f, g, h ; T0, T1, T2, T3, T4, T5, T6, T7);
 generate_public_instance!(a, b, c, d, e, f, g, h, i ; T0, T1, T2, T3, T4, T5, T6, T7, T8);
+generate_public_instance!(a, b, c, d, e, f, g, h, i, j ; T0, T1, T2, T3, T4, T5, T6, T7, T8, T9);
+generate_public_instance!(a, b, c, d, e, f, g, h, i, j, k ; T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, TA);
+generate_public_instance!(a, b, c, d, e, f, g, h, i, j, k, l ; T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, TA, TB);
+
+#[cfg(test)]
+mod tests {
+
+use super::*;
+
+#[test]
+fn multiple_borrows_tuple() {
+    let value = GhostToken::new(|token| {
+        let cell1 = GhostCell::new(42);
+        let cell2 = GhostCell::new(47);
+        let cell3 = GhostCell::new(7);
+        let cell4 = GhostCell::new(9);
+
+        let (reference1, reference2, reference3, reference4): (&i32, &i32, &i32, &i32)
+            = (&cell1, &cell2, &cell3, &cell4).borrow(&token);
+
+        (*reference1, *reference2, *reference3, *reference4)
+    });
+    assert_eq!((42, 47, 7, 9), value);
+}
+
+#[test]
+fn multiple_borrows_tuple_ref() {
+    let value = GhostToken::new(|token| {
