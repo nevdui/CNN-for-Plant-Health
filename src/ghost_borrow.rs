@@ -152,3 +152,26 @@ fn multiple_borrows_tuple() {
 #[test]
 fn multiple_borrows_tuple_ref() {
     let value = GhostToken::new(|token| {
+        let cell1 = GhostCell::new(42);
+        let cell2 = GhostCell::new(47);
+        let cell3 = GhostCell::new(7);
+        let cell4 = GhostCell::new(9);
+        let tuple = (cell1, cell2, cell3, cell4);
+
+        let reference: &(i32, i32, i32, i32) = tuple.borrow(&token);
+
+        (reference.0, reference.1, reference.2, reference.3)
+    });
+    assert_eq!((42, 47, 7, 9), value);
+}
+
+#[test]
+fn multiple_borrows_array_ref() {
+    let value = GhostToken::new(|token| {
+        let cell1 = GhostCell::new(42);
+        let cell2 = GhostCell::new(47);
+        let cell3 = GhostCell::new(7);
+        let cell4 = GhostCell::new(9);
+        let array = [cell1, cell2, cell3, cell4];
+
+        let reference: &[i32; 4] = array.borrow(&token);
