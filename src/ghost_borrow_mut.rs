@@ -65,3 +65,40 @@ pub trait GhostBorrowMut<'a, 'brand> {
     /// If the operation is not infallible, then a runtime check is necessary, in which case the unchecked version of
     /// the operation may be used if performance matters and the caller is certain of the absence of problems.
     ///
+    /// #   Example
+    ///
+    /// ```rust
+    /// use ghost_cell::{GhostToken, GhostCell, GhostBorrowMut};
+    ///
+    /// let value = GhostToken::new(|mut token| {
+    ///     let cell1 = GhostCell::new(42);
+    ///     let cell2 = GhostCell::new(47);
+    ///
+    ///     let (reference1, reference2): (&mut i32, &mut i32)
+    ///         = (&cell1, &cell2).borrow_mut(&mut token).unwrap();
+    ///     *reference1 = 33;
+    ///     *reference2 = 34;
+    ///     // here we stop mutating, so the token isn't mutably borrowed anymore, and we can read again
+    ///
+    ///     (*cell1.borrow(&token), *cell2.borrow(&token))
+    /// });
+    ///
+    /// assert_eq!((33, 34), value);
+    /// ```
+    fn borrow_mut(self, token: &'a mut GhostToken<'brand>) -> Result<Self::Result, Self::Error>;
+
+    /// Borrows any number of `GhostCell`s at the same time, infallibly.
+    ///
+    /// #   Safety
+    ///
+    /// The caller guarantees that the various `GhostCell`s do not alias.
+    unsafe fn borrow_mut_unchecked(self, token: &'a mut GhostToken<'brand>) -> Self::Result;
+}
+
+impl<'a, 'brand, T> GhostBorrowMut<'a, 'brand> for &'a [GhostCell<'brand, T>] {
+    type Result = &'a mut [T];
+    type Error = Infallible;
+
+    fn borrow_mut(self, token: &'a mut GhostToken<'brand>) -> Result<Self::Result, Self::Error> {
+        //  Safety:
+        //  -   All cells are adjacent in memory, hence distinct from one another.
