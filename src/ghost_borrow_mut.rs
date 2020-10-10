@@ -134,3 +134,47 @@ impl<'a, 'brand, T, const N: usize> GhostBorrowMut<'a, 'brand> for &'a [GhostCel
         mem::transmute::<Self, Self::Result>(self)
     }
 }
+
+impl<'a, 'brand, T: ?Sized, const N: usize> GhostBorrowMut<'a, 'brand> for [&'a GhostCell<'brand, T>; N] {
+    type Result = [&'a mut T; N];
+    type Error = GhostAliasingError;
+
+    fn borrow_mut(self, token: &'a mut GhostToken<'brand>) -> Result<Self::Result, Self::Error> {
+        check_distinct(self.map(get_span))?;
+
+        //  Safety:
+        //  -   The cells were checked to be distinct.
+        Ok(unsafe { self.borrow_mut_unchecked(token) })
+    }
+
+    unsafe fn borrow_mut_unchecked(self, _: &'a mut GhostToken<'brand>) -> Self::Result {
+        //  Safety:
+        //  -   Exclusive access to the `GhostToken` ensures exclusive access to the cells' content, if unaliased.
+        //  -   The caller guarantees the cells are not aliased.
+        //  -   `[&'a GhostCell<'brand, T>; N]` and `[&'a mut T; N]` have the same size.
+        //  -   `[&'a GhostCell<'brand, T>; N]` implements `Copy`, so no `mem::forget` is needed.
+        //  -   We can't use `mem::transmute`, because of https://github.com/rust-lang/rust/issues/61956.
+        ptr::read(&self as *const _ as *const Self::Result)
+    }
+}
+
+macro_rules! last {
+    () => {};
+    ($head:ident $(,)?) => {
+        $head
+    };
+    ($head:ident, $($tail:ident),+ $(,)?) => {
+        last!($($tail),+)
+    };
+}
+
+macro_rules! generate_public_instance {
+    ( $($name:ident),* ; $($type_letter:ident),* ) => {
+        impl<'a, 'brand, $($type_letter: ?Sized,)*> GhostBorrowMut<'a, 'brand>
+            for ( $(&'a GhostCell<'brand, $type_letter>, )* )
+        {
+            type Result = ( $(&'a mut $type_letter, )* );
+            type Error = GhostAliasingError;
+
+            fn borrow_mut(self, token: &'a mut GhostToken<'brand>) -> Result<Self::Result, Self::Error> {
+                let ($($name,)*) = self;
