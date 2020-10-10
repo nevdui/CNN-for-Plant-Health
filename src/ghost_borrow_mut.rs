@@ -102,3 +102,35 @@ impl<'a, 'brand, T> GhostBorrowMut<'a, 'brand> for &'a [GhostCell<'brand, T>] {
     fn borrow_mut(self, token: &'a mut GhostToken<'brand>) -> Result<Self::Result, Self::Error> {
         //  Safety:
         //  -   All cells are adjacent in memory, hence distinct from one another.
+        Ok(unsafe { self.borrow_mut_unchecked(token) })
+    }
+
+    unsafe fn borrow_mut_unchecked(self, _: &'a mut GhostToken<'brand>) -> Self::Result {
+        //  Safety:
+        //  -   Exclusive access to the `GhostToken` ensures exclusive access to the cells' content, if unaliased.
+        //  -   `GhostCell` is `repr(transparent)`, hence `T` and `GhostCell<T>` have the same memory representation.
+        //  -   All cells are adjacent in memory, hence distinct from one another.
+        #[allow(mutable_transmutes)]
+        mem::transmute::<Self, Self::Result>(self)
+    }
+}
+
+impl<'a, 'brand, T, const N: usize> GhostBorrowMut<'a, 'brand> for &'a [GhostCell<'brand, T>; N] {
+    type Result = &'a mut [T; N];
+    type Error = Infallible;
+
+    fn borrow_mut(self, token: &'a mut GhostToken<'brand>) -> Result<Self::Result, Self::Error> {
+        //  Safety:
+        //  -   All cells are adjacent in memory, hence distinct from one another.
+        Ok(unsafe { self.borrow_mut_unchecked(token) })
+    }
+
+    unsafe fn borrow_mut_unchecked(self, _: &'a mut GhostToken<'brand>) -> Self::Result {
+        //  Safety:
+        //  -   Exclusive access to the `GhostToken` ensures exclusive access to the cells' content, if unaliased.
+        //  -   `GhostCell` is `repr(transparent)`, hence `T` and `GhostCell<T>` have the same memory representation.
+        //  -   All cells are adjacent in memory, hence distinct from one another.
+        #[allow(mutable_transmutes)]
+        mem::transmute::<Self, Self::Result>(self)
+    }
+}
