@@ -178,3 +178,32 @@ macro_rules! generate_public_instance {
 
             fn borrow_mut(self, token: &'a mut GhostToken<'brand>) -> Result<Self::Result, Self::Error> {
                 let ($($name,)*) = self;
+
+                check_distinct([ $( get_span($name), )* ])?;
+
+                //  Safety:
+                //  -   The cells were checked to be distinct.
+                Ok(unsafe { self.borrow_mut_unchecked(token) })
+            }
+
+            unsafe fn borrow_mut_unchecked(self, _: &'a mut GhostToken<'brand>) -> Self::Result {
+                let ($($name,)*) = self;
+
+                //  Safety:
+                //  -   Exclusive access to the `GhostToken` ensures exclusive access to the cells' content, if unaliased.
+                //  -   The caller guarantees the cells are not aliased.
+                ( $( &mut * $name.as_ptr(),)* )
+            }
+        }
+
+        impl<'a, 'brand, $($type_letter,)*> GhostBorrowMut<'a, 'brand>
+            for &'a ( $(GhostCell<'brand, $type_letter>, )* )
+        where
+            last!( $($type_letter),* ): ?Sized
+        {
+            type Result = &'a mut ( $($type_letter, )* );
+            type Error = Infallible;
+
+            fn borrow_mut(self, token: &'a mut GhostToken<'brand>) -> Result<Self::Result, Self::Error> {
+                //  Safety:
+                //  -   All cells are adjacent in memory, hence distinct from one another.
