@@ -207,3 +207,41 @@ macro_rules! generate_public_instance {
             fn borrow_mut(self, token: &'a mut GhostToken<'brand>) -> Result<Self::Result, Self::Error> {
                 //  Safety:
                 //  -   All cells are adjacent in memory, hence distinct from one another.
+                Ok(unsafe { self.borrow_mut_unchecked(token) })
+            }
+
+            unsafe fn borrow_mut_unchecked(self, _: &'a mut GhostToken<'brand>) -> Self::Result {
+                //  Safety:
+                //  -   Exclusive access to the `GhostToken` ensures exclusive access to the cells' content, if unaliased.
+                //  -   `GhostCell` is `repr(transparent)`, hence `T` and `GhostCell<T>` have the same memory representation.
+                //  -   All cells are adjacent in memory, hence distinct from one another.
+                #[allow(mutable_transmutes)]
+                core::mem::transmute::<Self, Self::Result>(self)
+            }
+        }
+    };
+}
+
+generate_public_instance!(a ; T0);
+generate_public_instance!(a, b ; T0, T1);
+generate_public_instance!(a, b, c ; T0, T1, T2);
+generate_public_instance!(a, b, c, d ; T0, T1, T2, T3);
+generate_public_instance!(a, b, c, d, e ; T0, T1, T2, T3, T4);
+generate_public_instance!(a, b, c, d, e, f ; T0, T1, T2, T3, T4, T5);
+generate_public_instance!(a, b, c, d, e, f, g ; T0, T1, T2, T3, T4, T5, T6);
+generate_public_instance!(a, b, c, d, e, f, g, h ; T0, T1, T2, T3, T4, T5, T6, T7);
+generate_public_instance!(a, b, c, d, e, f, g, h, i ; T0, T1, T2, T3, T4, T5, T6, T7, T8);
+generate_public_instance!(a, b, c, d, e, f, g, h, i, j ; T0, T1, T2, T3, T4, T5, T6, T7, T8, T9);
+generate_public_instance!(a, b, c, d, e, f, g, h, i, j, k ; T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, TA);
+generate_public_instance!(a, b, c, d, e, f, g, h, i, j, k, l ; T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, TA, TB);
+
+//
+//  Implementation
+//
+
+//  Returns the _inclusive_ range of memory covered by the value.
+//
+//  #   Why an inclusive range?
+//
+//  -   Dynamically-sized types (DST) require checking for memory range overlap, not just pointer equality.
+//  -   If a value is at the very edge of the memory range, then one-past-the-end would overflow (and wrap around); an
