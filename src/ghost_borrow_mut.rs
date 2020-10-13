@@ -245,3 +245,46 @@ generate_public_instance!(a, b, c, d, e, f, g, h, i, j, k, l ; T0, T1, T2, T3, T
 //
 //  -   Dynamically-sized types (DST) require checking for memory range overlap, not just pointer equality.
 //  -   If a value is at the very edge of the memory range, then one-past-the-end would overflow (and wrap around); an
+//      inclusive range has no wrap around issue.
+fn get_span<T: ?Sized>(value: &T) -> (*const u8, *const u8) {
+    //  FIXME: Do zero-sized values have a fixed address when part of an array or tuple?
+
+    let value_size = mem::size_of_val(value);
+
+    let offset = if value_size == 0 { 0 } else { value_size - 1 };
+
+    let start = value as *const T as *const u8;
+
+    //  Safety:
+    //  -   `end` is within the same allocation as `start`, since `value_size` is the size of the object.
+    //  -   `offset` does not overflow `isize`, as the value exists.
+    //  -   `offset` does not rely on wrapping around, since the value doesn't.
+    let end = unsafe { start.add(offset) };
+
+    (start, end)
+}
+
+//  Returns `Ok(())` if the inclusive ranges do not overlap, and `Err(GhostAliasingError)` otherwise.
+//
+//  Assumes that the ranges are _inclusive_.
+fn check_distinct<const N: usize>(mut array: [(*const u8, *const u8); N]) -> Result<(), GhostAliasingError> {
+    //  Sort slices by their start pointer.
+    array.sort_unstable_by_key(|t| t.0);
+
+    //  Overlap can then be detected by whether the end of a slice overtakes the start of the next slice.
+    for window in array.windows(2) {
+        //  Safety:
+        //  -   `window` is guaranteed to have exactly 2 elements.
+        let (left, right) = unsafe { (window.get_unchecked(0), window.get_unchecked(1)) };
+
+        //  Due to ranges being _inclusive_, we need >=, not >.
+        if left.1 >= right.0 {
+            return Err(GhostAliasingError);
+        }
+    }
+
+    Ok(())
+}
+
+#[cfg(test)]
+mod tests {
