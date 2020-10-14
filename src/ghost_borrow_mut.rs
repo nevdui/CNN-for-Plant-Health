@@ -322,3 +322,45 @@ fn multiple_borrows_tuple_aliased() {
         let _: (&mut i32, &mut i32, &mut i32, &mut i32)
             = (&cell1, &cell2, &cell3, &cell2).borrow_mut(&mut token).unwrap();
     });
+}
+
+#[test]
+fn multiple_borrows_tuple_ref() {
+    let value = GhostToken::new(|mut token| {
+        let cell1 = GhostCell::new(42);
+        let cell2 = GhostCell::new(47);
+        let cell3 = GhostCell::new(7);
+        let cell4 = GhostCell::new(9);
+        let tuple = (cell1, cell2, cell3, cell4);
+
+        let reference: &mut (i32, i32, i32, i32)
+            = tuple.borrow_mut(&mut token).unwrap();
+        reference.0 = 33;
+        reference.1 = 34;
+        reference.2 = 35;
+        reference.3 = 36;
+
+        // here we stop mutating, so the token isn't mutably borrowed anymore, and we can read again
+        (*tuple.0.borrow(&token), *tuple.1.borrow(&token), *tuple.2.borrow(&token))
+    });
+    assert_eq!((33, 34, 35), value);
+}
+
+#[test]
+fn multiple_borrows_array_ref() {
+    let value = GhostToken::new(|mut token| {
+        let cell1 = GhostCell::new(42);
+        let cell2 = GhostCell::new(47);
+        let cell3 = GhostCell::new(7);
+        let cell4 = GhostCell::new(9);
+        let array = [cell1, cell2, cell3, cell4];
+
+        let reference: &mut [i32; 4]
+            = array.borrow_mut(&mut token).unwrap();
+        reference[0] = 33;
+        reference[1] = 34;
+        reference[2] = 35;
+        reference[3] = 36;
+
+        // here we stop mutating, so the token isn't mutably borrowed anymore, and we can read again
+        (*array[0].borrow(&token), *array[1].borrow(&token), *array[2].borrow(&token))
