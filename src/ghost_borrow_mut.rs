@@ -288,3 +288,37 @@ fn check_distinct<const N: usize>(mut array: [(*const u8, *const u8); N]) -> Res
 
 #[cfg(test)]
 mod tests {
+
+use super::*;
+
+#[test]
+fn multiple_borrows_tuple() {
+    let value = GhostToken::new(|mut token| {
+        let cell1 = GhostCell::new(42);
+        let cell2 = GhostCell::new(47);
+        let cell3 = GhostCell::new(7);
+        let cell4 = GhostCell::new(9);
+
+        let (reference1, reference2, reference3, reference4): (&mut i32, &mut i32, &mut i32, &mut i32)
+            = (&cell1, &cell2, &cell3, &cell4).borrow_mut(&mut token).unwrap();
+        *reference1 = 33;
+        *reference2 = 34;
+        *reference3 = 35;
+        *reference4 = 36;
+
+        // here we stop mutating, so the token isn't mutably borrowed anymore, and we can read again
+        (*cell1.borrow(&token), *cell2.borrow(&token), *cell3.borrow(&token))
+    });
+    assert_eq!((33, 34, 35), value);
+}
+
+#[test]
+#[should_panic]
+fn multiple_borrows_tuple_aliased() {
+    GhostToken::new(|mut token| {
+        let cell1 = GhostCell::new(42);
+        let cell2 = GhostCell::new(47);
+        let cell3 = GhostCell::new(7);
+        let _: (&mut i32, &mut i32, &mut i32, &mut i32)
+            = (&cell1, &cell2, &cell3, &cell2).borrow_mut(&mut token).unwrap();
+    });
