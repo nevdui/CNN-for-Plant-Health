@@ -364,3 +364,33 @@ fn multiple_borrows_array_ref() {
 
         // here we stop mutating, so the token isn't mutably borrowed anymore, and we can read again
         (*array[0].borrow(&token), *array[1].borrow(&token), *array[2].borrow(&token))
+    });
+    assert_eq!((33, 34, 35), value);
+}
+
+#[test]
+#[should_panic]
+fn multiple_borrows_single_slice_overlap() {
+    GhostToken::new(|mut token| {
+        let mut array = [3, 7];
+        let cell_of_slice = &*GhostCell::from_mut(&mut array[..]);
+        let slice_of_cells = cell_of_slice.as_slice_of_cells();
+        let second_cell = &slice_of_cells[1];
+
+        let _ = (second_cell, cell_of_slice).borrow_mut(&mut token).unwrap();
+    });
+}
+
+#[test]
+#[should_panic]
+fn multiple_borrows_single_array_overlap() {
+    GhostToken::new(|mut token| {
+        let cell_of_array = GhostCell::new([3, 7]);
+        let slice_of_cells = (&cell_of_array as &GhostCell<[i32]>).as_slice_of_cells();
+        let second_cell = &slice_of_cells[1];
+
+        let _ = (second_cell, &cell_of_array).borrow_mut(&mut token).unwrap();
+    });
+}
+
+//  Trait suitable for testing the mutable borrowing of trait objects
