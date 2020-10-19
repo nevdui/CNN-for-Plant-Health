@@ -394,3 +394,39 @@ fn multiple_borrows_single_array_overlap() {
 }
 
 //  Trait suitable for testing the mutable borrowing of trait objects
+trait Store {
+    type Item;
+
+    fn get(&self) -> Self::Item;
+
+    fn set(&mut self, x: Self::Item);
+}
+
+impl Store for i32 {
+    type Item = Self;
+
+    fn get(&self) -> Self::Item {
+        *self
+    }
+
+    fn set(&mut self, x: Self::Item) {
+        *self = x;
+    }
+}
+
+#[test]
+fn multiple_borrows_tuple_unsized() {
+    let value = GhostToken::new(|mut token| {
+        let mut data1 = 42;
+        let mut data2 = [47];
+        let mut data3 = 7;
+        let mut data4 = [9];
+
+        let cell1 = &*GhostCell::from_mut(&mut data1 as &mut dyn Store<Item = i32>);
+        let cell2 = &*GhostCell::from_mut(&mut data2 as &mut [i32]);
+        let cell3 = &*GhostCell::from_mut(&mut data3 as &mut dyn Store<Item = i32>);
+        let cell4 = &*GhostCell::from_mut(&mut data4 as &mut [i32]);
+
+        let (reference1, reference2, reference3, reference4)
+            = (cell1, cell2, cell3, cell4).borrow_mut(&mut token).unwrap();
+        reference1.set(7);
