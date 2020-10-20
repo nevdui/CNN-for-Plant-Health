@@ -430,3 +430,33 @@ fn multiple_borrows_tuple_unsized() {
         let (reference1, reference2, reference3, reference4)
             = (cell1, cell2, cell3, cell4).borrow_mut(&mut token).unwrap();
         reference1.set(7);
+        reference3.set(42);
+        mem::swap(&mut reference2[0], &mut reference4[0]);
+
+        (reference1.get(), reference2[0], reference3.get(), reference4[0])
+    });
+    assert_eq!((7, 9, 42, 47), value);
+}
+
+#[test]
+fn multiple_borrows_array_unsized_slice() {
+    let value = GhostToken::new(|mut token| {
+        let mut data1 = [42];
+        let mut data2 = [47];
+        let mut data3 = [7];
+        let mut data4 = [9];
+
+        let cell1 = &*GhostCell::from_mut(&mut data1 as &mut [i32]);
+        let cell2 = &*GhostCell::from_mut(&mut data2 as &mut [i32]);
+        let cell3 = &*GhostCell::from_mut(&mut data3 as &mut [i32]);
+        let cell4 = &*GhostCell::from_mut(&mut data4 as &mut [i32]);
+        let array = [cell1, cell2, cell3, cell4];
+
+        let reference: [&mut [i32]; 4] = array.borrow_mut(&mut token).unwrap();
+        reference[0][0] = 33;
+        reference[1][0] = 34;
+        reference[2][0] = 35;
+        reference[3][0] = 36;
+
+        (array[0].borrow(&token)[0], array[1].borrow(&token)[0], array[2].borrow(&token)[0])
+    });
