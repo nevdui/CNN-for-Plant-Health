@@ -460,3 +460,38 @@ fn multiple_borrows_array_unsized_slice() {
 
         (array[0].borrow(&token)[0], array[1].borrow(&token)[0], array[2].borrow(&token)[0])
     });
+    assert_eq!((33, 34, 35), value);
+}
+
+#[test]
+fn multiple_borrows_array_unsized_dyn_trait() {
+    let value = GhostToken::new(|mut token| {
+        let mut data1 = 42;
+        let mut data2 = 47;
+        let mut data3 = 7;
+        let mut data4 = 9;
+
+        let cell1 = &*GhostCell::from_mut(&mut data1 as &mut dyn Store<Item = i32>);
+        let cell2 = &*GhostCell::from_mut(&mut data2 as &mut dyn Store<Item = i32>);
+        let cell3 = &*GhostCell::from_mut(&mut data3 as &mut dyn Store<Item = i32>);
+        let cell4 = &*GhostCell::from_mut(&mut data4 as &mut dyn Store<Item = i32>);
+        let array = [cell1, cell2, cell3, cell4];
+
+        let reference: [&mut dyn Store<Item = i32>; 4] = array.borrow_mut(&mut token).unwrap();
+        reference[0].set(33);
+        reference[1].set(34);
+        reference[2].set(35);
+        reference[3].set(36);
+
+        (array[0].borrow(&token).get(), array[1].borrow(&token).get(), array[2].borrow(&token).get())
+    });
+    assert_eq!((33, 34, 35), value);
+}
+
+#[test]
+#[should_panic]
+fn multiple_borrows_tuple_unsized_aliased() {
+    GhostToken::new(|mut token| {
+        let mut data1 = 42;
+        let mut data2 = [47];
+        let mut data3 = 7;
