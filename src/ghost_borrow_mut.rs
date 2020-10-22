@@ -495,3 +495,29 @@ fn multiple_borrows_tuple_unsized_aliased() {
         let mut data1 = 42;
         let mut data2 = [47];
         let mut data3 = 7;
+
+        let cell1 = &*GhostCell::from_mut(&mut data1 as &mut dyn Store<Item = i32>);
+        let cell2 = &*GhostCell::from_mut(&mut data2 as &mut [i32]);
+        let cell3 = &*GhostCell::from_mut(&mut data3 as &mut dyn ToString);
+
+        let _: (&mut dyn Store<Item = i32>, &mut [i32], &mut dyn ToString, &mut [i32])
+            = (cell1, cell2, cell3, cell2).borrow_mut(&mut token).unwrap();
+    });
+}
+
+#[test]
+#[should_panic]
+fn multiple_borrows_array_unsized_slice_aliased() {
+    GhostToken::new(|mut token| {
+        let mut data1 = [42];
+        let mut data2 = [47];
+        let mut data3 = [7];
+
+        let cell1 = &*GhostCell::from_mut(&mut data1 as &mut [i32]);
+        let cell2 = &*GhostCell::from_mut(&mut data2 as &mut [i32]);
+        let cell3 = &*GhostCell::from_mut(&mut data3 as &mut [i32]);
+        let array = [cell1, cell2, cell3, cell2];
+
+        let _: [&mut [i32]; 4] = array.borrow_mut(&mut token).unwrap();
+    });
+}
