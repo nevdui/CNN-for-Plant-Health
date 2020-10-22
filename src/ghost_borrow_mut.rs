@@ -521,3 +521,45 @@ fn multiple_borrows_array_unsized_slice_aliased() {
         let _: [&mut [i32]; 4] = array.borrow_mut(&mut token).unwrap();
     });
 }
+
+#[test]
+#[should_panic]
+fn multiple_borrows_array_unsized_dyn_trait_aliased() {
+    GhostToken::new(|mut token| {
+        let mut data1 = 42;
+        let mut data2 = 47;
+        let mut data3 = 7;
+
+        let cell1 = &*GhostCell::from_mut(&mut data1 as &mut dyn Store<Item = i32>);
+        let cell2 = &*GhostCell::from_mut(&mut data2 as &mut dyn Store<Item = i32>);
+        let cell3 = &*GhostCell::from_mut(&mut data3 as &mut dyn Store<Item = i32>);
+        let array = [cell1, cell2, cell3, cell2];
+
+        let _: [&mut dyn Store<Item = i32>; 4] = array.borrow_mut(&mut token).unwrap();
+    });
+}
+
+#[test]
+fn check_distinct() {
+    // small array
+    GhostToken::new(|mut token| {
+        let cells = [
+            GhostCell::new(1),
+            GhostCell::new(2),
+            GhostCell::new(3),
+            GhostCell::new(4),
+            GhostCell::new(5),
+            GhostCell::new(6),
+        ];
+
+        // no aliasing
+        let tuple1 = (&cells[0], &cells[1], &cells[2], &cells[3], &cells[4], &cells[5]);
+        assert!(tuple1.borrow_mut(&mut token).is_ok());
+
+        // aliasing at start/end
+        let tuple2 = (&cells[0], &cells[1], &cells[2], &cells[3], &cells[4], &cells[0]);
+        assert!(tuple2.borrow_mut(&mut token).is_err());
+    });
+
+    // big array
+    GhostToken::new(|mut token| {
