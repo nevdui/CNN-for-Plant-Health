@@ -599,3 +599,5 @@ fn check_distinct() {
         assert!(tuple5.borrow_mut(&mut token).is_err());
     });
 }
+
+} // mod tests
