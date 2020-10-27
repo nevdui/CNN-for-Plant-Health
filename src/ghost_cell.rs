@@ -1,1 +1,3 @@
-//! `GhostCell` and `GhostToken`, as per <https://plv.mpi-sws.org/rustbelt
+//! `GhostCell` and `GhostToken`, as per <https://plv.mpi-sws.org/rustbelt/ghostcell/>.
+//!
+//! Reference 
