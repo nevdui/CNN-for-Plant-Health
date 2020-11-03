@@ -3,4 +3,5 @@
 //! Reference implementation at <https://gitlab.mpi-sws.org/FP/ghostcell/-/tree/master/ghostcell>.
 
 use core::{
- 
+    cell::UnsafeCell,
+    marker::Phantom
