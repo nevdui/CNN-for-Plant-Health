@@ -4,4 +4,8 @@
 
 use core::{
     cell::UnsafeCell,
-    marker::Phantom
+    marker::PhantomData,
+    mem,
+};
+
+/// A `Ghos
