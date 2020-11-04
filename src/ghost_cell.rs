@@ -8,4 +8,4 @@ use core::{
     mem,
 };
 
-/// A `Ghos
+/// A `GhostToken<'x>` is _the_ key to acce
