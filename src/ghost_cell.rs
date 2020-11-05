@@ -8,4 +8,5 @@ use core::{
     mem,
 };
 
-/// A `GhostToken<'x>` is _the_ key to access the content of any `&Gho
+/// A `GhostToken<'x>` is _the_ key to access the content of any `&GhostCell<'x, _>` sharing the same brand.
+///
