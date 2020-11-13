@@ -12,4 +12,7 @@ use core::{
 ///
 /// Each `GhostToken<'x>` is created alongside a unique brand (its lifetime), and each `GhostCell<'x, T>` is associated
 /// to one, and only one, `GhostToken` at a time via this brand. The entire set of `GhostCell<'x, T>` associated to a
-/// given `GhostToken<'x>` creates a pool of cells all being accessible solely through the one token they are as
+/// given `GhostToken<'x>` creates a pool of cells all being accessible solely through the one token they are associated
+/// to.
+///
+/// The
