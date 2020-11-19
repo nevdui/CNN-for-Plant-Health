@@ -15,4 +15,5 @@ use core::{
 /// given `GhostToken<'x>` creates a pool of cells all being accessible solely through the one token they are associated
 /// to.
 ///
-/// The pool of `GhostCell` associated to a token need not be homogeneous, each may own
+/// The pool of `GhostCell` associated to a token need not be homogeneous, each may own a value of a different type.
+pub stru
