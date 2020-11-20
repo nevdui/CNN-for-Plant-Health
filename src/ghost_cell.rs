@@ -16,4 +16,4 @@ use core::{
 /// to.
 ///
 /// The pool of `GhostCell` associated to a token need not be homogeneous, each may own a value of a different type.
-pub stru
+pub struct GhostToken<'brand> { _marker: Invaria
