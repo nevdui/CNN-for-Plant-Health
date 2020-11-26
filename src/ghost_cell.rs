@@ -21,4 +21,4 @@ pub struct GhostToken<'brand> { _marker: InvariantLifetime<'brand> }
 impl<'brand> GhostToken<'brand> {
     /// Creates a fresh token to which `GhostCell`s can be tied to later.
     ///
-    /// Due to the use of a lifetime, the `G
+    /// Due to the use of a lifetime, the `GhostCell`s tied to a given token can 
