@@ -22,4 +22,7 @@ impl<'brand> GhostToken<'brand> {
     /// Creates a fresh token to which `GhostCell`s can be tied to later.
     ///
     /// Due to the use of a lifetime, the `GhostCell`s tied to a given token can only live within the confines of the
-    /// invocation of the `fun`
+    /// invocation of the `fun` closure.
+    ///
+    /// #   Example
+    ///
