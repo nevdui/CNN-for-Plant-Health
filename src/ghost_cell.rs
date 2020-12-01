@@ -27,4 +27,5 @@ impl<'brand> GhostToken<'brand> {
     /// #   Example
     ///
     /// ```rust
-    /// use ghost_cell::{Gh
+    /// use ghost_cell::{GhostToken, GhostCell};
+    ///
