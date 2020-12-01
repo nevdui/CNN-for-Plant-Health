@@ -29,3 +29,6 @@ impl<'brand> GhostToken<'brand> {
     /// ```rust
     /// use ghost_cell::{GhostToken, GhostCell};
     ///
+    /// let n = 12;
+    ///
+    //
