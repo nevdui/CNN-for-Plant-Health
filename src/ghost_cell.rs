@@ -31,4 +31,4 @@ impl<'brand> GhostToken<'brand> {
     ///
     /// let n = 12;
     ///
-    //
+    /// let value = GhostToken::new(|mut 
