@@ -34,4 +34,4 @@ impl<'brand> GhostToken<'brand> {
     /// let value = GhostToken::new(|mut token| {
     ///     let cell = GhostCell::new(42);
     ///
-    ///     let 
+    ///     let vec: Vec<_> = (0..n).map(|_| &cell).
