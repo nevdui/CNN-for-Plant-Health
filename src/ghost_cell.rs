@@ -38,4 +38,7 @@ impl<'brand> GhostToken<'brand> {
     ///
     ///     *vec[n / 2].borrow_mut(&mut token) = 33;
     ///
-    ///     *cell.borrow(
+    ///     *cell.borrow(&token)
+    /// });
+    ///
+    /// assert_
