@@ -36,4 +36,6 @@ impl<'brand> GhostToken<'brand> {
     ///
     ///     let vec: Vec<_> = (0..n).map(|_| &cell).collect();
     ///
-    ///     *vec[n / 2].borrow_mut(&mut token
+    ///     *vec[n / 2].borrow_mut(&mut token) = 33;
+    ///
+    ///     *cell.borrow(
