@@ -41,4 +41,6 @@ impl<'brand> GhostToken<'brand> {
     ///     *cell.borrow(&token)
     /// });
     ///
-    /// assert_
+    /// assert_eq!(33, value);
+    /// ```
+    #[allo
