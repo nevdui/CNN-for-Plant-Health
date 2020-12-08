@@ -43,4 +43,5 @@ impl<'brand> GhostToken<'brand> {
     ///
     /// assert_eq!(33, value);
     /// ```
-    #[allo
+    #[allow(clippy::new_ret_no_self)]
+    p
