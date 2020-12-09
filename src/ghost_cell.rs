@@ -44,4 +44,5 @@ impl<'brand> GhostToken<'brand> {
     /// assert_eq!(33, value);
     /// ```
     #[allow(clippy::new_ret_no_self)]
-    p
+    pub fn new<R, F>(fun: F) -> R
+  
