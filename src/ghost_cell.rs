@@ -49,4 +49,8 @@ impl<'brand> GhostToken<'brand> {
         for<'new_brand> F: FnOnce(GhostToken<'new_brand>) -> R,
     {
         let token = Self { _marker: InvariantLifetime::default() };
-        fun(to
+        fun(token)
+    }
+}
+
+/// A `GhostToken` is
