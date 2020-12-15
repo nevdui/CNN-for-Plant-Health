@@ -53,4 +53,4 @@ impl<'brand> GhostToken<'brand> {
     }
 }
 
-/// A `GhostToken` is
+/// A `GhostToken` is stateless, therefore it can saf
