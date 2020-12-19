@@ -56,4 +56,4 @@ impl<'brand> GhostToken<'brand> {
 /// A `GhostToken` is stateless, therefore it can safely be passed across threads.
 unsafe impl<'brand> Send for GhostToken<'brand> {}
 
-/// A `GhostToken` i
+/// A `GhostToken` is stateless, therefore it can
