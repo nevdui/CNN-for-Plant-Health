@@ -57,3 +57,4 @@ impl<'brand> GhostToken<'brand> {
 unsafe impl<'brand> Send for GhostToken<'brand> {}
 
 /// A `GhostToken` is stateless, therefore it can safely be accessed from different threads.
+unsafe impl<'brand> Sync for Gho
