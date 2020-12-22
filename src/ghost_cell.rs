@@ -59,4 +59,6 @@ unsafe impl<'brand> Send for GhostToken<'brand> {}
 /// A `GhostToken` is stateless, therefore it can safely be accessed from different threads.
 unsafe impl<'brand> Sync for GhostToken<'brand> {}
 
-/// Branded wrapper f
+/// Branded wrapper for a value, whose type is `T`.
+///
+/// A `Gho
