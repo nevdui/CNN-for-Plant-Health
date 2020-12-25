@@ -62,4 +62,5 @@ unsafe impl<'brand> Sync for GhostToken<'brand> {}
 /// Branded wrapper for a value, whose type is `T`.
 ///
 /// A `GhostCell<'x, T>` owns an instance of type `T`:
-/// -   Unique access to the cell allows unimpeded access to the con
+/// -   Unique access to the cell allows unimpeded access to the contained value.
+/// -   Shared access to th
