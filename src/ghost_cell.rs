@@ -63,4 +63,4 @@ unsafe impl<'brand> Sync for GhostToken<'brand> {}
 ///
 /// A `GhostCell<'x, T>` owns an instance of type `T`:
 /// -   Unique access to the cell allows unimpeded access to the contained value.
-/// -   Shared access to the cell requires mediating access th
+/// -   Shared access to the cell requires mediating access through the associated `GhostToken<'x, T>` which
