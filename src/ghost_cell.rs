@@ -66,4 +66,4 @@ unsafe impl<'brand> Sync for GhostToken<'brand> {}
 /// -   Shared access to the cell requires mediating access through the associated `GhostToken<'x, T>` which will
 ///     enforce at compile-time the aliasing XOR mutability safety property.
 #[repr(transparent)]
-pub s
+pub struct GhostCell<'brand, T: ?
