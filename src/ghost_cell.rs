@@ -67,4 +67,5 @@ unsafe impl<'brand> Sync for GhostToken<'brand> {}
 ///     enforce at compile-time the aliasing XOR mutability safety property.
 #[repr(transparent)]
 pub struct GhostCell<'brand, T: ?Sized> {
-    _marker: InvariantLifetime<
+    _marker: InvariantLifetime<'brand>,
+    value: UnsafeCell<T>,
