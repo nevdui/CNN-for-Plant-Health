@@ -71,4 +71,5 @@ pub struct GhostCell<'brand, T: ?Sized> {
     value: UnsafeCell<T>,
 }
 
-impl<'brand, T> GhostCell<'b
+impl<'brand, T> GhostCell<'brand, T> {
+    /// Wraps some `T` into
