@@ -69,3 +69,6 @@ unsafe impl<'brand> Sync for GhostToken<'brand> {}
 pub struct GhostCell<'brand, T: ?Sized> {
     _marker: InvariantLifetime<'brand>,
     value: UnsafeCell<T>,
+}
+
+impl<'brand, T> GhostCell<'b
