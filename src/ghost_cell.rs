@@ -72,4 +72,4 @@ pub struct GhostCell<'brand, T: ?Sized> {
 }
 
 impl<'brand, T> GhostCell<'brand, T> {
-    /// Wraps some `T` into
+    /// Wraps some `T` into a `GhostCell` with brand `'brand` which as
