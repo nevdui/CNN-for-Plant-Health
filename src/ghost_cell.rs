@@ -72,4 +72,7 @@ pub struct GhostCell<'brand, T: ?Sized> {
 }
 
 impl<'brand, T> GhostCell<'brand, T> {
-    /// Wraps some `T` into a `GhostCell` with brand `'brand` which associates it to one, and only one, `GhostToken`
+    /// Wraps some `T` into a `GhostCell` with brand `'brand` which associates it to one, and only one, `GhostToken`.
+    ///
+    /// #   Example
+ 
