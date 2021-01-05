@@ -78,4 +78,6 @@ impl<'brand, T> GhostCell<'brand, T> {
     ///
     /// ```rust
     /// use ghost_cell::{GhostToken, GhostCell};
-    /
+    ///
+    /// GhostToken::new(|token| {
+    ///
