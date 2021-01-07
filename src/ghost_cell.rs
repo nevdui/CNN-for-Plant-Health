@@ -80,4 +80,5 @@ impl<'brand, T> GhostCell<'brand, T> {
     /// use ghost_cell::{GhostToken, GhostCell};
     ///
     /// GhostToken::new(|token| {
-    ///
+    ///     let cell = GhostCell::new(42);
+    //
