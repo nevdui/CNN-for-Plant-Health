@@ -85,3 +85,5 @@ impl<'brand, T> GhostCell<'brand, T> {
     ///     assert_eq!(42, *cell.borrow(&token));
     /// });
     /// ```
+    pub const fn new(value: T) -> Self {
+    
