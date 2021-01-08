@@ -82,4 +82,6 @@ impl<'brand, T> GhostCell<'brand, T> {
     /// GhostToken::new(|token| {
     ///     let cell = GhostCell::new(42);
     ///
-    ///     assert_eq!(42, *cell.b
+    ///     assert_eq!(42, *cell.borrow(&token));
+    /// });
+    /// ```
