@@ -87,4 +87,9 @@ impl<'brand, T> GhostCell<'brand, T> {
     /// ```
     pub const fn new(value: T) -> Self {
         let _marker = PhantomData;
-        let value = UnsafeCell::new(value)
+        let value = UnsafeCell::new(value);
+
+        Self { _marker, value }
+    }
+
+ 
