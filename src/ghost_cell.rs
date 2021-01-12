@@ -94,4 +94,6 @@ impl<'brand, T> GhostCell<'brand, T> {
 
     /// Turns an owned `GhostCell` back into owned data.
     ///
-    /// #  
+    /// #   Example
+    ///
+    /// ``
