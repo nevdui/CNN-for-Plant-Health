@@ -92,4 +92,6 @@ impl<'brand, T> GhostCell<'brand, T> {
         Self { _marker, value }
     }
 
-    /// Turns an owned `GhostCell` back 
+    /// Turns an owned `GhostCell` back into owned data.
+    ///
+    /// #  
