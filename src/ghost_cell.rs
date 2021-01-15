@@ -96,4 +96,5 @@ impl<'brand, T> GhostCell<'brand, T> {
     ///
     /// #   Example
     ///
-    /// ``
+    /// ```rust
+    /// use ghost_cell::{Gh
