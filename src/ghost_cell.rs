@@ -98,4 +98,5 @@ impl<'brand, T> GhostCell<'brand, T> {
     ///
     /// ```rust
     /// use ghost_cell::{GhostToken, GhostCell};
-    /
+    ///
+    /// let value = GhostTok
