@@ -105,4 +105,6 @@ impl<'brand, T> GhostCell<'brand, T> {
     ///     cell.into_inner()
     /// });
     ///
-    /// as
+    /// assert_eq!(42, value);
+    /// ```
+  
