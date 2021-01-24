@@ -107,4 +107,7 @@ impl<'brand, T> GhostCell<'brand, T> {
     ///
     /// assert_eq!(42, value);
     /// ```
-    pub fn into_inner(self) -> T { s
+    pub fn into_inner(self) -> T { self.value.into_inner() }
+}
+
+impl<
