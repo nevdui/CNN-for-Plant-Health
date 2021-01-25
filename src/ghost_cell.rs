@@ -110,4 +110,5 @@ impl<'brand, T> GhostCell<'brand, T> {
     pub fn into_inner(self) -> T { self.value.into_inner() }
 }
 
-impl<'brand, T: ?Sized> GhostCell<'br
+impl<'brand, T: ?Sized> GhostCell<'brand, T> {
+    /// Immutably borrows t
