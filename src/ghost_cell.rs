@@ -118,4 +118,6 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     /// ```rust
     /// use ghost_cell::{GhostToken, GhostCell};
     ///
-    /// let n
+    /// let n = 12;
+    ///
+    /// let value = Gho
