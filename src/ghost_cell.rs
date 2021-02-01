@@ -120,4 +120,4 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     ///
     /// let n = 12;
     ///
-    /// let value = Gho
+    /// let value = GhostToken::new(|mut tok
