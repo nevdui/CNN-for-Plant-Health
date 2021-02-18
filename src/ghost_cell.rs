@@ -125,3 +125,4 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     ///
     ///     let vec: Vec<_> = (0..n).map(|_| &cell).collect();
     ///
+    ///     let one: &i32 = vec[1].borrow(
