@@ -128,3 +128,5 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     ///     let one: &i32 = vec[1].borrow(&token);
     ///     let two: &i32 = vec[2].borrow(&token);
     ///
+    ///     *one + *two
+    /
