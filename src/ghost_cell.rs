@@ -129,4 +129,6 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     ///     let two: &i32 = vec[2].borrow(&token);
     ///
     ///     *one + *two
-    /
+    /// });
+    ///
+    /// assert_eq
