@@ -131,4 +131,6 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     ///     *one + *two
     /// });
     ///
-    /// assert_eq
+    /// assert_eq!(84, value);
+    /// ```
+    pub fn borrow<
