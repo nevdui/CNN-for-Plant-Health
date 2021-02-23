@@ -135,3 +135,4 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     /// ```
     pub fn borrow<'a>(&'a self, _: &'a GhostToken<'brand>) -> &'a T {
         //  Safety:
+        //  -   The cell is borrow
