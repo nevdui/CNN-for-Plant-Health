@@ -136,4 +136,5 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     pub fn borrow<'a>(&'a self, _: &'a GhostToken<'brand>) -> &'a T {
         //  Safety:
         //  -   The cell is borrowed immutably by this call, it therefore cannot already be borrowed mutably.
-        //  -   The token is borrowed immutably by this call, it therefore cannot be already borr
+        //  -   The token is borrowed immutably by this call, it therefore cannot be already borrowed mutably.
+        //  -   `self.v
