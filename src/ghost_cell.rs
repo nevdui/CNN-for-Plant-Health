@@ -140,4 +140,5 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
         //  -   `self.value` therefore cannot be already borrowed mutably, as doing so requires calling either:
         //      -   `borrow_mut`, which would borrow the token mutably.
         //      -   `get_mut`, which would borrow the cell mutably.
-        u
+        unsafe { &*self.value.get() }
+ 
