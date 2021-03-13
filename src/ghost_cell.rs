@@ -141,4 +141,6 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
         //      -   `borrow_mut`, which would borrow the token mutably.
         //      -   `get_mut`, which would borrow the cell mutably.
         unsafe { &*self.value.get() }
- 
+    }
+
+    /// Mutably borrows the `GhostCell`
