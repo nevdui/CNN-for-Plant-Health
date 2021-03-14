@@ -143,4 +143,4 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
         unsafe { &*self.value.get() }
     }
 
-    /// Mutably borrows the `GhostCell`
+    /// Mutably borrows the `GhostCell` with the same-branded token.
