@@ -144,3 +144,5 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     }
 
     /// Mutably borrows the `GhostCell` with the same-branded token.
+    ///
+    /// #   Example
