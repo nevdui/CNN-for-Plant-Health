@@ -148,4 +148,4 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     /// #   Example
     ///
     /// ```rust
-    /// use gho
+    /// use ghost_cell::{GhostToken, GhostCell};
