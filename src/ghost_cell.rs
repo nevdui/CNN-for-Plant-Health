@@ -155,4 +155,4 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     /// let value = GhostToken::new(|mut token| {
     ///     let cell = GhostCell::new(42);
     ///
-    ///     let v
+    ///     let vec: Vec<_> = (0..n).map(|_| &cell).collec
