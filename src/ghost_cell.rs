@@ -160,4 +160,5 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     ///     let reference: &mut i32 = vec[n / 2].borrow_mut(&mut token);
     ///     *reference = 33;
     ///
-  
+    ///     *cell.borrow(&token)
+    /// 
