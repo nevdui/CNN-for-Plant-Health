@@ -161,4 +161,7 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     ///     *reference = 33;
     ///
     ///     *cell.borrow(&token)
-    /// 
+    /// });
+    ///
+    /// assert_eq!(33, value);
+ 
