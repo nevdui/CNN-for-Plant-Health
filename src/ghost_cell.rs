@@ -167,4 +167,4 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     /// ```
     pub fn borrow_mut<'a>(&'a self, _: &'a mut GhostToken<'brand>) -> &'a mut T {
         //  Safety:
-      
+        //  -   The cell is borr
