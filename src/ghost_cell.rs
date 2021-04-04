@@ -168,4 +168,4 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     pub fn borrow_mut<'a>(&'a self, _: &'a mut GhostToken<'brand>) -> &'a mut T {
         //  Safety:
         //  -   The cell is borrowed immutably by this call, it therefore cannot already be borrowed mutably.
-        //  -   The token is borrowed mutably by 
+        //  -   The token is borrowed mutably by this call, it therefore cannot be 
