@@ -169,4 +169,5 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
         //  Safety:
         //  -   The cell is borrowed immutably by this call, it therefore cannot already be borrowed mutably.
         //  -   The token is borrowed mutably by this call, it therefore cannot be already borrowed.
-        //  -   `self.value` therefore cannot already be borrowed, as doing so requires call
+        //  -   `self.value` therefore cannot already be borrowed, as doing so requires calling either:
+        //      -   `borro
