@@ -176,4 +176,6 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     }
 
     /// Returns a raw pointer to the contained value.
-    pub const fn as_ptr
+    pub const fn as_ptr(&self) -> *mut T { self.value.get() }
+
+ 
