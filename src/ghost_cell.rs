@@ -180,4 +180,4 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
 
     /// Turns a mutably borrowed `GhostCell` into mutably borrowed data.
     ///
-    /// `self` is mutably borrowed for
+    /// `self` is mutably borrowed for the lifetime of the result, e
