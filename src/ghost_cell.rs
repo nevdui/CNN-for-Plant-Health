@@ -183,3 +183,6 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     /// `self` is mutably borrowed for the lifetime of the result, ensuring the absence of aliasing.
     ///
     /// #   Example
+    ///
+    /// ```rust
+    /// us
