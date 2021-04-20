@@ -188,4 +188,4 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     /// use ghost_cell::{GhostToken, GhostCell};
     ///
     /// let value = GhostToken::new(|mut token| {
-   
+    ///     let mut cell = GhostCell::new(
