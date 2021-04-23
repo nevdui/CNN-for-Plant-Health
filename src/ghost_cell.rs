@@ -192,4 +192,5 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     ///
     ///     *cell.get_mut() = 33;
     ///
-    /// 
+    ///     *cell.borrow(&token)
+ 
