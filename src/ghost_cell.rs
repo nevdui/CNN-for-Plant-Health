@@ -195,4 +195,6 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     ///     *cell.borrow(&token)
     /// });
     ///
-    /// asser
+    /// assert_eq!(33, value);
+    /// ```
+    pub
