@@ -201,4 +201,7 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
         //  Safety:
         //  -   `self` is mutably borrowed for the duration.
         //  -   `GhostCell<'_, T>` has the same in-memory representation as `T`.
-        unsafe { mem::transmute(sel
+        unsafe { mem::transmute(self) }
+    }
+
+    /// Turns mutably borr
