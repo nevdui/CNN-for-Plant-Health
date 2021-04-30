@@ -204,4 +204,6 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
         unsafe { mem::transmute(self) }
     }
 
-    /// Turns mutably borrowed data into a mutably borrowed `
+    /// Turns mutably borrowed data into a mutably borrowed `GhostCell`.
+    ///
+    /// `t
