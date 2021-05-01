@@ -206,4 +206,4 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
 
     /// Turns mutably borrowed data into a mutably borrowed `GhostCell`.
     ///
-    /// `t
+    /// `t` is mutably borrowed for the lifetime
