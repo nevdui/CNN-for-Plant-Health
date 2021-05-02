@@ -208,4 +208,6 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     ///
     /// `t` is mutably borrowed for the lifetime of the result, ensuring the absence of aliasing.
     ///
-    //
+    /// #   Example
+    ///
+    /// ```rust
