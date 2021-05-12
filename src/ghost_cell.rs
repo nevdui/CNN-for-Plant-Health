@@ -224,4 +224,6 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     ///     *vec[n / 2].borrow_mut(&mut token) = 33;
     /// });
     ///
-    /// a
+    /// assert_eq!(33, value);
+    /// ```
+    pub 
