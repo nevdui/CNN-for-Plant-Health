@@ -227,4 +227,5 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     /// assert_eq!(33, value);
     /// ```
     pub fn from_mut(t: &mut T) -> &mut Self {
- 
+        //  Safety:
+   
