@@ -228,4 +228,4 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     /// ```
     pub fn from_mut(t: &mut T) -> &mut Self {
         //  Safety:
-   
+        //  -   `t` is mutably borrowed fo
