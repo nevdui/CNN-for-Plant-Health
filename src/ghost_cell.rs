@@ -229,4 +229,5 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     pub fn from_mut(t: &mut T) -> &mut Self {
         //  Safety:
         //  -   `t` is mutably borrowed for the duration.
-        //  -   `GhostCell<'_, T>` has the same in-memory rep
+        //  -   `GhostCell<'_, T>` has the same in-memory representation as `T`.
+        unsafe 
