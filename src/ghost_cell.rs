@@ -234,4 +234,5 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
     }
 }
 
-//  S
+//  Safe convenience methods
+#[forb
