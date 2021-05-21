@@ -237,4 +237,4 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
 //  Safe convenience methods
 #[forbid(unsafe_code)]
 impl<'brand, T> GhostCell<'brand, T> {
-    /// Retu
+    /// Returns the value, replacing it 
