@@ -239,4 +239,6 @@ impl<'brand, T: ?Sized> GhostCell<'brand, T> {
 impl<'brand, T> GhostCell<'brand, T> {
     /// Returns the value, replacing it by the supplied one.
     ///
-   
+    /// #   Example
+    ///
+    /// ```rus
