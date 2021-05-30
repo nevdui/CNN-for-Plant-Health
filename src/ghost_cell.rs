@@ -242,4 +242,8 @@ impl<'brand, T> GhostCell<'brand, T> {
     /// #   Example
     ///
     /// ```rust
-    /// use ghost_cell::{GhostToken, GhostCell
+    /// use ghost_cell::{GhostToken, GhostCell};
+    ///
+    /// let n = 12;
+    ///
+    /// le
