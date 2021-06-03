@@ -246,4 +246,4 @@ impl<'brand, T> GhostCell<'brand, T> {
     ///
     /// let n = 12;
     ///
-    /// le
+    /// let value = GhostToken::new(
