@@ -251,4 +251,5 @@ impl<'brand, T> GhostCell<'brand, T> {
     ///
     ///     let vec: Vec<_> = (0..n).map(|_| &cell).collect();
     ///
-    ///     let previous = vec[n / 2].replace(33, &mut toke
+    ///     let previous = vec[n / 2].replace(33, &mut token);
+    ///     assert_eq!(42, previous)
