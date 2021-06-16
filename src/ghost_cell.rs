@@ -255,3 +255,6 @@ impl<'brand, T> GhostCell<'brand, T> {
     ///     assert_eq!(42, previous);
     ///
     ///     *cell.borrow(&token)
+    /// });
+    ///
+    /// asse
