@@ -259,4 +259,4 @@ impl<'brand, T> GhostCell<'brand, T> {
     ///
     /// assert_eq!(33, value);
     /// ```
-    pub 
+    pub fn replace(&self, value: T, token: &
