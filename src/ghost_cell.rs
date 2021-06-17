@@ -260,4 +260,4 @@ impl<'brand, T> GhostCell<'brand, T> {
     /// assert_eq!(33, value);
     /// ```
     pub fn replace(&self, value: T, token: &mut GhostToken<'brand>) -> T {
-        me
+        mem::replace(self.borrow_mut(token), 
