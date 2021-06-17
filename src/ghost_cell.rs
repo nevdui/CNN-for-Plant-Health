@@ -263,4 +263,4 @@ impl<'brand, T> GhostCell<'brand, T> {
         mem::replace(self.borrow_mut(token), value)
     }
 
-    /// Returns the 
+    /// Returns the value, replacing it with the defaul
