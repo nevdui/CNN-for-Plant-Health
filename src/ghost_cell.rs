@@ -263,4 +263,6 @@ impl<'brand, T> GhostCell<'brand, T> {
         mem::replace(self.borrow_mut(token), value)
     }
 
-    /// Returns the value, replacing it with the defaul
+    /// Returns the value, replacing it with the default value.
+    ///
+    /// #   Exampl
