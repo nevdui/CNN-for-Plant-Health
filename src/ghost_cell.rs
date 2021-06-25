@@ -265,4 +265,7 @@ impl<'brand, T> GhostCell<'brand, T> {
 
     /// Returns the value, replacing it with the default value.
     ///
-    /// #   Exampl
+    /// #   Example
+    ///
+    /// ```rust
+    /// u
