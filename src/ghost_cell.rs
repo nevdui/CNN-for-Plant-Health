@@ -268,4 +268,4 @@ impl<'brand, T> GhostCell<'brand, T> {
     /// #   Example
     ///
     /// ```rust
-    /// u
+    /// use ghost_cell::{GhostToken, Ghos
