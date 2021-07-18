@@ -280,4 +280,6 @@ impl<'brand, T> GhostCell<'brand, T> {
     ///     let previous = vec[n / 2].take(&mut token);
     ///     assert_eq!(42, previous);
     ///
-    ///   
+    ///     *cell.borrow(&token)
+    /// });
+    /
