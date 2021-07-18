@@ -277,4 +277,4 @@ impl<'brand, T> GhostCell<'brand, T> {
     ///
     ///     let vec: Vec<_> = (0..n).map(|_| &cell).collect();
     ///
-    ///  
+    ///     let previous = vec[n / 2].take(&mut
