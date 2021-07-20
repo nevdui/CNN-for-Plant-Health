@@ -285,4 +285,4 @@ impl<'brand, T> GhostCell<'brand, T> {
     ///
     /// assert_eq!(0, value);
     /// ```
-    pub fn take(&self, token:
+    pub fn take(&self, token: &mut GhostToken<'brand>) -> T
