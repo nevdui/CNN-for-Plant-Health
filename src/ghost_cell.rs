@@ -290,4 +290,6 @@ impl<'brand, T> GhostCell<'brand, T> {
         T: Default,
     {
         self.replace(T::default(), token)
-  
+    }
+
+    /// Swaps the values of two ce
