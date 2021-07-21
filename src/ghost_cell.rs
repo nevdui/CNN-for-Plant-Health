@@ -289,4 +289,5 @@ impl<'brand, T> GhostCell<'brand, T> {
     where
         T: Default,
     {
-      
+        self.replace(T::default(), token)
+  
