@@ -294,4 +294,5 @@ impl<'brand, T> GhostCell<'brand, T> {
 
     /// Swaps the values of two cells.
     ///
-    /// If the cells fully overlap, i.e. they have the same address, they are "swapped" (a no
+    /// If the cells fully overlap, i.e. they have the same address, they are "swapped" (a no-op) and `Ok` is returned.
+    /// 
