@@ -298,4 +298,6 @@ impl<'brand, T> GhostCell<'brand, T> {
     /// `Err` is returned if they overlap in any other way and can't be swapped.
     ///
     /// #   Example
-    /
+    ///
+    /// ```rust
+    /// use
