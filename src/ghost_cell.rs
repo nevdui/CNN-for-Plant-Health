@@ -300,4 +300,4 @@ impl<'brand, T> GhostCell<'brand, T> {
     /// #   Example
     ///
     /// ```rust
-    /// use
+    /// use ghost_cell::{GhostToken, GhostCell}
