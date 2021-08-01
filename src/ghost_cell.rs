@@ -305,4 +305,5 @@ impl<'brand, T> GhostCell<'brand, T> {
     /// let n = 12;
     ///
     /// let value = GhostToken::new(|mut token| {
-    ///     let cell1 = GhostCell::new(42)
+    ///     let cell1 = GhostCell::new(42);
+    ///     let cell2 = Ghost
