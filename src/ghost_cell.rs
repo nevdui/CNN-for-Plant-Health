@@ -308,4 +308,4 @@ impl<'brand, T> GhostCell<'brand, T> {
     ///     let cell1 = GhostCell::new(42);
     ///     let cell2 = GhostCell::new(33);
     ///
-    ///     le
+    ///     let vec: Vec<_> = (0..n).flat_map(|_|
