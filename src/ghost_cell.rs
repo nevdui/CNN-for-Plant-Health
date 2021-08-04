@@ -310,4 +310,4 @@ impl<'brand, T> GhostCell<'brand, T> {
     ///
     ///     let vec: Vec<_> = (0..n).flat_map(|_| [&cell1, &cell2]).collect();
     ///
- 
+    ///     vec[n / 2].swap(
