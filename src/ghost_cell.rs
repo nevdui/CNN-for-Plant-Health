@@ -312,4 +312,7 @@ impl<'brand, T> GhostCell<'brand, T> {
     ///
     ///     vec[n / 2].swap(&vec[n / 2 + 1], &mut token).expect("overlapping references");
     ///
-    ///     *cell1.borrow(&token
+    ///     *cell1.borrow(&token)
+    /// });
+    ///
+    //
