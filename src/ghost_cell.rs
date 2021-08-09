@@ -315,4 +315,5 @@ impl<'brand, T> GhostCell<'brand, T> {
     ///     *cell1.borrow(&token)
     /// });
     ///
-    //
+    /// assert_eq!(33, value);
+    /// ```
