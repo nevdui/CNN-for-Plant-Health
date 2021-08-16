@@ -317,4 +317,5 @@ impl<'brand, T> GhostCell<'brand, T> {
     ///
     /// assert_eq!(33, value);
     /// ```
-    #[cfg(feature = "experimental-mult
+    #[cfg(feature = "experimental-multiple-mutable-borrows")]
+    pub fn 
