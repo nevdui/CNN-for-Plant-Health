@@ -318,4 +318,4 @@ impl<'brand, T> GhostCell<'brand, T> {
     /// assert_eq!(33, value);
     /// ```
     #[cfg(feature = "experimental-multiple-mutable-borrows")]
-    pub fn swap(&self, other: &Self, token: &mut Ghos
+    pub fn swap(&self, other: &Self, token: &mut GhostToken<'brand>) -> Result<(), crate::ghost_
