@@ -320,3 +320,4 @@ impl<'brand, T> GhostCell<'brand, T> {
     #[cfg(feature = "experimental-multiple-mutable-borrows")]
     pub fn swap(&self, other: &Self, token: &mut GhostToken<'brand>) -> Result<(), crate::ghost_borrow_mut::GhostAliasingError> {
         // Ignore full overlap.
+        if core::ptr::eq(self, other
