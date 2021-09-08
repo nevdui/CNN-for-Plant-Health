@@ -322,4 +322,6 @@ impl<'brand, T> GhostCell<'brand, T> {
         // Ignore full overlap.
         if core::ptr::eq(self, other) {
             return Ok(());
-    
+        }
+
+        crate::ghost_borrow_mut
