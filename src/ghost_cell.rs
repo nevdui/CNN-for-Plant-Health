@@ -324,4 +324,4 @@ impl<'brand, T> GhostCell<'brand, T> {
             return Ok(());
         }
 
-        crate::ghost_borrow_mut
+        crate::ghost_borrow_mut::GhostBorrowMut::borrow_mut((self, other
