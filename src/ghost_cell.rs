@@ -324,4 +324,8 @@ impl<'brand, T> GhostCell<'brand, T> {
             return Ok(());
         }
 
-        crate::ghost_borrow_mut::GhostBorrowMut::borrow_mut((self, other), token).map(|(a, b)| mem::swap
+        crate::ghost_borrow_mut::GhostBorrowMut::borrow_mut((self, other), token).map(|(a, b)| mem::swap(a, b))
+    }
+}
+
+impl<'brand, T: Default> 
