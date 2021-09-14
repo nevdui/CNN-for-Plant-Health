@@ -330,4 +330,8 @@ impl<'brand, T> GhostCell<'brand, T> {
 
 impl<'brand, T: Default> Default for GhostCell<'brand, T> {
     fn default() -> Self {
-        Self::new(T::default()
+        Self::new(T::default())
+    }
+}
+
+impl<'brand, T> GhostC
