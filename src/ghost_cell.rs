@@ -328,4 +328,5 @@ impl<'brand, T> GhostCell<'brand, T> {
     }
 }
 
-impl<'brand, T: Default> 
+impl<'brand, T: Default> Default for GhostCell<'brand, T> {
+    fn defa
