@@ -334,4 +334,5 @@ impl<'brand, T: Default> Default for GhostCell<'brand, T> {
     }
 }
 
-impl<'brand, T> GhostC
+impl<'brand, T> GhostCell<'brand, [T]> {
+    /// Returns 
