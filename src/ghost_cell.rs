@@ -335,4 +335,4 @@ impl<'brand, T: Default> Default for GhostCell<'brand, T> {
 }
 
 impl<'brand, T> GhostCell<'brand, [T]> {
-    /// Returns 
+    /// Returns a slice of cells from a cell containing
