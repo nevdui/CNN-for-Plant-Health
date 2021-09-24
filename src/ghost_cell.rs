@@ -341,4 +341,7 @@ impl<'brand, T> GhostCell<'brand, [T]> {
     ///
     /// ```rust
     /// use ghost_cell::{GhostToken, GhostCell};
-  
+    ///
+    /// let n = 12;
+    ///
+    ///
