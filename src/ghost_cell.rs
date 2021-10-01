@@ -346,4 +346,6 @@ impl<'brand, T> GhostCell<'brand, [T]> {
     ///
     /// let value = GhostToken::new(|mut token| {
     ///     let mut vec: Vec<_> = (0..n).collect();
-    ///     let cell = GhostCell::from_mut(&mut vec[..])
+    ///     let cell = GhostCell::from_mut(&mut vec[..]);
+    ///
+    ///     let slice = cel
