@@ -348,4 +348,6 @@ impl<'brand, T> GhostCell<'brand, [T]> {
     ///     let mut vec: Vec<_> = (0..n).collect();
     ///     let cell = GhostCell::from_mut(&mut vec[..]);
     ///
-    ///     let slice = cel
+    ///     let slice = cell.as_slice_of_cells();
+    ///
+   
