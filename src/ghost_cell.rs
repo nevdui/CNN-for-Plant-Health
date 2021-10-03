@@ -352,4 +352,6 @@ impl<'brand, T> GhostCell<'brand, [T]> {
     ///
     ///     *slice[n / 2].borrow_mut(&mut token) = 33;
     ///
-    ///     vec
+    ///     vec[n / 2]
+    /// });
+    ///
