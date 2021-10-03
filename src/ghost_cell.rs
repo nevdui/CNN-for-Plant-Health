@@ -350,4 +350,6 @@ impl<'brand, T> GhostCell<'brand, [T]> {
     ///
     ///     let slice = cell.as_slice_of_cells();
     ///
-    ///     *slice[n / 2].borrow_mut(&mut 
+    ///     *slice[n / 2].borrow_mut(&mut token) = 33;
+    ///
+    ///     vec
