@@ -356,4 +356,5 @@ impl<'brand, T> GhostCell<'brand, [T]> {
     /// });
     ///
     /// assert_eq!(33, value);
-    /// `
+    /// ```
+    pub fn as_slice_of_cells(&se
