@@ -355,3 +355,5 @@ impl<'brand, T> GhostCell<'brand, [T]> {
     ///     vec[n / 2]
     /// });
     ///
+    /// assert_eq!(33, value);
+    /// `
