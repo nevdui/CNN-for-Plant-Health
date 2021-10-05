@@ -357,4 +357,6 @@ impl<'brand, T> GhostCell<'brand, [T]> {
     ///
     /// assert_eq!(33, value);
     /// ```
-    pub fn as_slice_of_cells(&self) -> &[GhostCell<'brand, T>
+    pub fn as_slice_of_cells(&self) -> &[GhostCell<'brand, T>] {
+        //  Safety:
+        //  -   Same l
