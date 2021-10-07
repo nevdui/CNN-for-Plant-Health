@@ -360,4 +360,5 @@ impl<'brand, T> GhostCell<'brand, [T]> {
     pub fn as_slice_of_cells(&self) -> &[GhostCell<'brand, T>] {
         //  Safety:
         //  -   Same lifetime.
-        //  -   `GhostCell<'_, T>` has the same in-memory repre
+        //  -   `GhostCell<'_, T>` has the same in-memory representation as `T`.
+        unsafe {
