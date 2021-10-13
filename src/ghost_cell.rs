@@ -361,4 +361,4 @@ impl<'brand, T> GhostCell<'brand, [T]> {
         //  Safety:
         //  -   Same lifetime.
         //  -   `GhostCell<'_, T>` has the same in-memory representation as `T`.
-        unsafe {
+        unsafe { &*(self.as_ptr() as *mut [Gh
