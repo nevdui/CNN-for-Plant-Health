@@ -365,4 +365,4 @@ impl<'brand, T> GhostCell<'brand, [T]> {
     }
 }
 
-impl<'brand, T: 
+impl<'brand, T: ?Sized> AsMut<T> for GhostCell<'bra
