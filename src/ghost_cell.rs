@@ -366,4 +366,7 @@ impl<'brand, T> GhostCell<'brand, [T]> {
 }
 
 impl<'brand, T: ?Sized> AsMut<T> for GhostCell<'brand, T> {
-    fn as_mut(&mut self) -> &mut T { 
+    fn as_mut(&mut self) -> &mut T { self.get_mut() }
+}
+
+impl<'brand, T> Fro
