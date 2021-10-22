@@ -370,4 +370,7 @@ impl<'brand, T: ?Sized> AsMut<T> for GhostCell<'brand, T> {
 }
 
 impl<'brand, T> From<T> for GhostCell<'brand, T> {
- 
+    fn from(t: T) -> Self { Self::new(t) }
+}
+
+///
