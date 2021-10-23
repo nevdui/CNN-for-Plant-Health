@@ -373,4 +373,4 @@ impl<'brand, T> From<T> for GhostCell<'brand, T> {
     fn from(t: T) -> Self { Self::new(t) }
 }
 
-///
+/// A `GhostCell<'_, T>` owns a `T`, so it 
