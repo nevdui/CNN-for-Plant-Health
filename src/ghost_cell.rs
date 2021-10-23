@@ -373,4 +373,6 @@ impl<'brand, T> From<T> for GhostCell<'brand, T> {
     fn from(t: T) -> Self { Self::new(t) }
 }
 
-/// A `GhostCell<'_, T>` owns a `T`, so it cannot be sent across threads if `T` 
+/// A `GhostCell<'_, T>` owns a `T`, so it cannot be sent across threads if `T` cannot.
+///
+/// Conversely, a `GhostCell` doe
