@@ -375,4 +375,4 @@ impl<'brand, T> From<T> for GhostCell<'brand, T> {
 
 /// A `GhostCell<'_, T>` owns a `T`, so it cannot be sent across threads if `T` cannot.
 ///
-/// Conversely, a `GhostCell` does not add any state on top 
+/// Conversely, a `GhostCell` does not add any state on top of `T`, so if `T` can be sent 
