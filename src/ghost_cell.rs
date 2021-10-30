@@ -377,4 +377,6 @@ impl<'brand, T> From<T> for GhostCell<'brand, T> {
 ///
 /// Conversely, a `GhostCell` does not add any state on top of `T`, so if `T` can be sent across threads, so can
 /// `GhostCell<'_, T>`
-unsafe impl<'brand, T: ?Sized + Send> Send for GhostCell<'brand, T> {
+unsafe impl<'brand, T: ?Sized + Send> Send for GhostCell<'brand, T> {}
+
+/// A `GhostCell<'_, T>` owns 
