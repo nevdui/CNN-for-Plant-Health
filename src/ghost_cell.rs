@@ -379,4 +379,4 @@ impl<'brand, T> From<T> for GhostCell<'brand, T> {
 /// `GhostCell<'_, T>`
 unsafe impl<'brand, T: ?Sized + Send> Send for GhostCell<'brand, T> {}
 
-/// A `GhostCell<'_, T>` owns 
+/// A `GhostCell<'_, T>` owns a `T`, so it cannot be accessed fro
