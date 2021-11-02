@@ -381,4 +381,4 @@ unsafe impl<'brand, T: ?Sized + Send> Send for GhostCell<'brand, T> {}
 
 /// A `GhostCell<'_, T>` owns a `T`, so it cannot be accessed from different threads if `T` cannot.
 ///
-/// Conversely, a `GhostCell` does not add any state on top of `T`, 
+/// Conversely, a `GhostCell` does not add any state on top of `T`, so if `T` can be accessed from diff
