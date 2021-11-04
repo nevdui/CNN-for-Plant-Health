@@ -383,4 +383,4 @@ unsafe impl<'brand, T: ?Sized + Send> Send for GhostCell<'brand, T> {}
 ///
 /// Conversely, a `GhostCell` does not add any state on top of `T`, so if `T` can be accessed from different threads,
 /// so can `GhostCell<'_, T>`. `T` also needs to be sendable across threads,
-/// because a `T`
+/// because a `T` can be extracted from a `&GhostCell<'b
