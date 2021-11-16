@@ -390,4 +390,4 @@ unsafe impl<'brand, T: ?Sized + Send + Sync> Sync for GhostCell<'brand, T> {}
 //  Implementation
 //
 
-type InvariantLifetime<'brand> = PhantomDat
+type InvariantLifetime<'brand> = PhantomData<fn(&'brand ()) -> &'brand ()>;
