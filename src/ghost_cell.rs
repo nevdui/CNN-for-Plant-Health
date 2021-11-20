@@ -396,4 +396,4 @@ type InvariantLifetime<'brand> = PhantomData<fn(&'brand ()) -> &'brand ()>;
 pub mod compile_tests {
 
 /// ```compile_fail
-/
+/// use ghost_cell::{GhostToken, Gh
