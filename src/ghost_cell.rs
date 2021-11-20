@@ -393,4 +393,7 @@ unsafe impl<'brand, T: ?Sized + Send + Sync> Sync for GhostCell<'brand, T> {}
 type InvariantLifetime<'brand> = PhantomData<fn(&'brand ()) -> &'brand ()>;
 
 #[doc(hidden)]
-pub mod com
+pub mod compile_tests {
+
+/// ```compile_fail
+/
