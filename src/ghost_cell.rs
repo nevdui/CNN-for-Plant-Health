@@ -398,4 +398,6 @@ pub mod compile_tests {
 /// ```compile_fail
 /// use ghost_cell::{GhostToken, GhostCell};
 ///
-/// GhostToken::new(|to
+/// GhostToken::new(|token| token);
+/// ```
+pub fn token
