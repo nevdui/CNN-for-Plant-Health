@@ -400,4 +400,6 @@ pub mod compile_tests {
 ///
 /// GhostToken::new(|token| token);
 /// ```
-pub fn token
+pub fn token_noescape() {}
+
+/// ```compile_f
