@@ -402,4 +402,5 @@ pub mod compile_tests {
 /// ```
 pub fn token_noescape() {}
 
-/// ```compile_f
+/// ```compile_fail
+/// use ghost_cell::{GhostTok
