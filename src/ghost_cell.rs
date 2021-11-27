@@ -405,4 +405,5 @@ pub fn token_noescape() {}
 /// ```compile_fail
 /// use ghost_cell::{GhostToken, GhostCell};
 ///
-/// GhostToke
+/// GhostToken::new(|mut token| {
+///     l
