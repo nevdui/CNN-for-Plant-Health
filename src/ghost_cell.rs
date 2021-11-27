@@ -406,4 +406,6 @@ pub fn token_noescape() {}
 /// use ghost_cell::{GhostToken, GhostCell};
 ///
 /// GhostToken::new(|mut token| {
-///     l
+///     let cell = GhostCell::new(42);
+///
+///
