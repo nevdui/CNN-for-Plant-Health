@@ -409,3 +409,8 @@ pub fn token_noescape() {}
 ///     let cell = GhostCell::new(42);
 ///
 ///     *cell.borrow_mut(&mut token) = 33;
+///
+///     cell
+/// });
+/// ```
+pu
