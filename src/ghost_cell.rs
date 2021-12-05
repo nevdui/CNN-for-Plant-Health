@@ -413,4 +413,6 @@ pub fn token_noescape() {}
 ///     cell
 /// });
 /// ```
-pu
+pub fn cell_noescape() {}
+
+/// ```c
