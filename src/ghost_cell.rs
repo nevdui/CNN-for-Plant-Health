@@ -416,4 +416,6 @@ pub fn token_noescape() {}
 pub fn cell_noescape() {}
 
 /// ```compile_fail,E0505
-/// use g
+/// use ghost_cell::{GhostToken, GhostCell};
+///
+/// G
