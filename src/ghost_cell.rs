@@ -415,4 +415,5 @@ pub fn token_noescape() {}
 /// ```
 pub fn cell_noescape() {}
 
-/// ```c
+/// ```compile_fail,E0505
+/// use g
