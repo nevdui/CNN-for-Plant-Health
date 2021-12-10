@@ -418,4 +418,5 @@ pub fn cell_noescape() {}
 /// ```compile_fail,E0505
 /// use ghost_cell::{GhostToken, GhostCell};
 ///
-/// G
+/// GhostToken::new(|token| {
+/// 
