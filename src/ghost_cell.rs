@@ -419,4 +419,4 @@ pub fn cell_noescape() {}
 /// use ghost_cell::{GhostToken, GhostCell};
 ///
 /// GhostToken::new(|token| {
-/// 
+///     let cell = GhostCell::new
