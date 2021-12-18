@@ -425,3 +425,6 @@ pub fn cell_noescape() {}
 ///     std::mem::drop(token);
 ///
 ///     *r
+/// });
+/// ```
+pub fn cell_bo
