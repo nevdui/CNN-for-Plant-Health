@@ -422,4 +422,6 @@ pub fn cell_noescape() {}
 ///     let cell = GhostCell::new(42);
 ///
 ///     let r = cell.borrow(&token);
-///     s
+///     std::mem::drop(token);
+///
+///     *r
