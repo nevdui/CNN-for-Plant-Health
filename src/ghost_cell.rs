@@ -427,4 +427,6 @@ pub fn cell_noescape() {}
 ///     *r
 /// });
 /// ```
-pub fn cell_bo
+pub fn cell_borrow_borrows_token() {}
+
+/// ```com
