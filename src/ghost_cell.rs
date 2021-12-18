@@ -421,4 +421,5 @@ pub fn cell_noescape() {}
 /// GhostToken::new(|token| {
 ///     let cell = GhostCell::new(42);
 ///
-///     let r = cell.b
+///     let r = cell.borrow(&token);
+///     s
