@@ -430,4 +430,6 @@ pub fn cell_noescape() {}
 pub fn cell_borrow_borrows_token() {}
 
 /// ```compile_fail,E0502
-/// use ghost_cell::{
+/// use ghost_cell::{GhostToken, GhostCell};
+///
+/// Ghos
