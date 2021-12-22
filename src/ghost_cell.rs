@@ -434,4 +434,6 @@ pub fn cell_borrow_borrows_token() {}
 ///
 /// GhostToken::new(|mut token| {
 ///     let one = GhostCell::new(1);
-///     let
+///     let two = GhostCell::new(2);
+///
+///
