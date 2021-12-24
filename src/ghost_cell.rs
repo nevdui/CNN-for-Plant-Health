@@ -436,4 +436,5 @@ pub fn cell_borrow_borrows_token() {}
 ///     let one = GhostCell::new(1);
 ///     let two = GhostCell::new(2);
 ///
-///     let r = one.borrow_mut(&mut tok
+///     let r = one.borrow_mut(&mut token);
+///     assert_eq!(2, *two.borrow
