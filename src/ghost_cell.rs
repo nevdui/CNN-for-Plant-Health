@@ -442,4 +442,6 @@ pub fn cell_borrow_borrows_token() {}
 ///     *r = 33;
 /// });
 /// ```
-pub fn cell_borrow_
+pub fn cell_borrow_mut_borrows_token_mutably() {}
+
+/// ```compi
