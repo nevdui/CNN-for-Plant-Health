@@ -440,4 +440,6 @@ pub fn cell_borrow_borrows_token() {}
 ///     assert_eq!(2, *two.borrow(&token));
 ///
 ///     *r = 33;
-/// }
+/// });
+/// ```
+pub fn cell_borrow_
