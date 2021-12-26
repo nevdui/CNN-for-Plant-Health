@@ -444,4 +444,5 @@ pub fn cell_borrow_borrows_token() {}
 /// ```
 pub fn cell_borrow_mut_borrows_token_mutably() {}
 
-/// ```compi
+/// ```compile_fail,E0505
+/// use ghost_cell::{GhostTo
