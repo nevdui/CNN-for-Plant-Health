@@ -447,4 +447,5 @@ pub fn cell_borrow_mut_borrows_token_mutably() {}
 /// ```compile_fail,E0505
 /// use ghost_cell::{GhostToken, GhostCell};
 ///
-/// GhostToke
+/// GhostToken::new(|token| {
+///     let cell = GhostCell::new(
