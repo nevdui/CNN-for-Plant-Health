@@ -450,4 +450,5 @@ pub fn cell_borrow_mut_borrows_token_mutably() {}
 /// GhostToken::new(|token| {
 ///     let cell = GhostCell::new(42);
 ///
-///     let r = cell.bo
+///     let r = cell.borrow(&token);
+///     std::me
