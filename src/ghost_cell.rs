@@ -455,4 +455,5 @@ pub fn cell_borrow_mut_borrows_token_mutably() {}
 ///
 ///     *r
 /// });
-/// 
+/// ```
+pub fn cell_borrow_borrows_cell(
