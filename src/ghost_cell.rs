@@ -459,3 +459,4 @@ pub fn cell_borrow_mut_borrows_token_mutably() {}
 pub fn cell_borrow_borrows_cell() {}
 
 /// ```compile_fail,E0505
+/// use ghost_cell::{GhostToken, GhostCell};
