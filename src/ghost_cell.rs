@@ -456,4 +456,6 @@ pub fn cell_borrow_mut_borrows_token_mutably() {}
 ///     *r
 /// });
 /// ```
-pub fn cell_borrow_borrows_cell(
+pub fn cell_borrow_borrows_cell() {}
+
+/// ```compile_fail,E0505
