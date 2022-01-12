@@ -464,4 +464,4 @@ pub fn cell_borrow_borrows_cell() {}
 /// GhostToken::new(|mut token| {
 ///     let cell = GhostCell::new(42);
 ///
-///   
+///     let r = cell.borrow_mut(&mut
