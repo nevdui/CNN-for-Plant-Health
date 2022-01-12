@@ -467,3 +467,7 @@ pub fn cell_borrow_borrows_cell() {}
 ///     let r = cell.borrow_mut(&mut token);
 ///     std::mem::drop(cell);
 ///
+///     *r
+/// });
+/// ```
+pub 
