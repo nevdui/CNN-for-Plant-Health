@@ -470,4 +470,4 @@ pub fn cell_borrow_borrows_cell() {}
 ///     *r
 /// });
 /// ```
-pub 
+pub fn cell_borrow_mut_borrows_cell()
