@@ -473,4 +473,6 @@ pub fn cell_borrow_borrows_cell() {}
 pub fn cell_borrow_mut_borrows_cell() {}
 
 /// ```compile_fail,E0502
-/// use ghost_cell::{GhostToken, Ghost
+/// use ghost_cell::{GhostToken, GhostCell};
+///
+/// GhostToken::new(|token| {
