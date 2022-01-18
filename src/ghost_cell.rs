@@ -476,4 +476,6 @@ pub fn cell_borrow_mut_borrows_cell() {}
 /// use ghost_cell::{GhostToken, GhostCell};
 ///
 /// GhostToken::new(|token| {
-///     let mut cell = GhostCell::
+///     let mut cell = GhostCell::new(42);
+///
+///     let r = cell.get_
