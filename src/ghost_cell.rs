@@ -479,4 +479,6 @@ pub fn cell_borrow_mut_borrows_cell() {}
 ///     let mut cell = GhostCell::new(42);
 ///
 ///     let r = cell.get_mut();
-///     assert_eq!(42, *cel
+///     assert_eq!(42, *cell.borrow(&token));
+///
+//
