@@ -481,4 +481,7 @@ pub fn cell_borrow_mut_borrows_cell() {}
 ///     let r = cell.get_mut();
 ///     assert_eq!(42, *cell.borrow(&token));
 ///
-//
+///     *r = 33;
+/// });
+/// ```
+pub fn ce
