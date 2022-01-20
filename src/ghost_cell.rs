@@ -486,4 +486,5 @@ pub fn cell_borrow_mut_borrows_cell() {}
 /// ```
 pub fn cell_get_mut_borrows_cell_mutably() {}
 
-/
+/// ```compile_fail,E0502
+/// use
