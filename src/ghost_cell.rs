@@ -484,4 +484,6 @@ pub fn cell_borrow_mut_borrows_cell() {}
 ///     *r = 33;
 /// });
 /// ```
-pub fn ce
+pub fn cell_get_mut_borrows_cell_mutably() {}
+
+/
