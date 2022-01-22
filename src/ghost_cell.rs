@@ -491,3 +491,5 @@ pub fn cell_get_mut_borrows_cell_mutably() {}
 ///
 /// GhostToken::new(|token| {
 ///     let mut value = 42;
+///
+///     let cell = Gh
