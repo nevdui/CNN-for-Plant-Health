@@ -500,4 +500,4 @@ pub fn cell_get_mut_borrows_cell_mutably() {}
 /// ```
 pub fn cell_from_mut_borrows_value_mutably() {}
 
-} // 
+} // mod compile_tests
