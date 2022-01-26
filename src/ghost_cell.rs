@@ -498,4 +498,6 @@ pub fn cell_get_mut_borrows_cell_mutably() {}
 ///     assert_eq!(42, *cell.borrow(&token));
 /// });
 /// ```
-pub fn cell_from_mut_bo
+pub fn cell_from_mut_borrows_value_mutably() {}
+
+} // 
