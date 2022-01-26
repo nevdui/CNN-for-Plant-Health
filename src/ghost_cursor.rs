@@ -1,1 +1,1 @@
-//! A `GhostCursor` implement
+//! A `GhostCursor` implements a cursor to navigate acros
