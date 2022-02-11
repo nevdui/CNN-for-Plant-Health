@@ -2,4 +2,6 @@
 //!
 //! #   Safety
 //!
-//! This is an untrodden path, here be dragons
+//! This is an untrodden path, here be dragons.
+//!
+//! ##  Safety: Aliasing.
