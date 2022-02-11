@@ -5,3 +5,5 @@
 //! This is an untrodden path, here be dragons.
 //!
 //! ##  Safety: Aliasing.
+//!
+//! The `GhostCursor` tri
