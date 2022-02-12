@@ -6,4 +6,4 @@
 //!
 //! ##  Safety: Aliasing.
 //!
-//! The `GhostCursor` tri
+//! The `GhostCursor` trivially enforces safe alias
