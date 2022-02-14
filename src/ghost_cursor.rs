@@ -9,4 +9,4 @@
 //! The `GhostCursor` trivially enforces safe aliasing by always tying the lifetime of the token it materializes to its
 //! own lifetime.
 //!
-//! The `GhostCursor` itself is therefore borrowed mu
+//! The `GhostCursor` itself is therefore borrowed mutably or immutably for the duration of 
