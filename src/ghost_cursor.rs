@@ -14,4 +14,6 @@
 //!
 //! ##  Safety: Lifetime
 //!
-//! This is the crux of the issue, and the most likely place for unsoundness in the whole 
+//! This is the crux of the issue, and the most likely place for unsoundness in the whole scheme.
+//!
+//! Let us start by a bro
