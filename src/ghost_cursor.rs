@@ -14,4 +14,4 @@
 //!
 //! ##  Safety: Lifetime
 //!
-//! This is the crux of the issue, and the most likely 
+//! This is the crux of the issue, and the most likely place for unsoundness in the whole 
