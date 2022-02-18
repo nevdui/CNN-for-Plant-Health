@@ -14,4 +14,4 @@
 //!
 //! ##  Safety: Lifetime
 //!
-//! This is the crux of the
+//! This is the crux of the issue, and the most likely 
