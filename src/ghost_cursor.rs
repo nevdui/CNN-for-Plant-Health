@@ -12,4 +12,6 @@
 //! The `GhostCursor` itself is therefore borrowed mutably or immutably for the duration of the lifetime of the token,
 //! preventing any abuse.
 //!
-//! ##  Safety
+//! ##  Safety: Lifetime
+//!
+//! This is the crux of the
