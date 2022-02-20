@@ -16,4 +16,4 @@
 //!
 //! This is the crux of the issue, and the most likely place for unsoundness in the whole scheme.
 //!
-//! Let us start by a broken example to better understa
+//! Let us start by a broken example to better understand what we are looking for. Let us imagine
