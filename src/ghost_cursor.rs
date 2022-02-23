@@ -20,4 +20,4 @@
 //! list data structure where each node has two optional fields, a previous and a next field, to point to the previous and next node,
 //! respectively.
 //!
-//! 
+//! Imagine the following set-up with 2 n
