@@ -22,4 +22,4 @@
 //!
 //! Imagine the following set-up with 2 nodes `a` and `b`:
 //!
-//! -   On the stack is `root`, a pointer 
+//! -   On the stack is `root`, a pointer owning half of `a` -- the
