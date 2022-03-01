@@ -23,4 +23,6 @@
 //! Imagine the following set-up with 2 nodes `a` and `b`:
 //!
 //! -   On the stack is `root`, a pointer owning half of `a` -- the other half doesn't matter here.
-//! -   `a.prev` and `a.next` are each a pointer 
+//! -   `a.prev` and `a.next` are each a pointer owning half of `b`.
+//!
+//! 
