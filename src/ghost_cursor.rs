@@ -25,4 +25,4 @@
 //! -   On the stack is `root`, a pointer owning half of `a` -- the other half doesn't matter here.
 //! -   `a.prev` and `a.next` are each a pointer owning half of `b`.
 //!
-//! Any method which allows both obtain
+//! Any method which allows both obtaining a reference to `b` an
