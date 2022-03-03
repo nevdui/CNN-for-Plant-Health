@@ -26,4 +26,4 @@
 //! -   `a.prev` and `a.next` are each a pointer owning half of `b`.
 //!
 //! Any method which allows both obtaining a reference to `b` and simultaneously a mutable reference to `a` is unsound,
-//! for ownin
+//! for owning a mutable reference to `a` allows setting
