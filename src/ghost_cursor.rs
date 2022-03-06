@@ -27,4 +27,4 @@
 //!
 //! Any method which allows both obtaining a reference to `b` and simultaneously a mutable reference to `a` is unsound,
 //! for owning a mutable reference to `a` allows setting both of its `prev` and `next` fields to `None`, dropping `b`,
-//! 
+//! and of course retaining a reference
