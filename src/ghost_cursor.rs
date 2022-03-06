@@ -26,4 +26,5 @@
 //! -   `a.prev` and `a.next` are each a pointer owning half of `b`.
 //!
 //! Any method which allows both obtaining a reference to `b` and simultaneously a mutable reference to `a` is unsound,
-//! for owning a mutable reference to `a` allows setting both of its `prev` and `next` fiel
+//! for owning a mutable reference to `a` allows setting both of its `prev` and `next` fields to `None`, dropping `b`,
+//! 
