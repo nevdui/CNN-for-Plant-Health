@@ -29,4 +29,5 @@
 //! for owning a mutable reference to `a` allows setting both of its `prev` and `next` fields to `None`, dropping `b`,
 //! and of course retaining a reference to a dropped element is opening the door to undefined behavior.
 //!
-//! Hence, the very stringent invariant that the `GhostCursor` must enforce is that apart fro
+//! Hence, the very stringent invariant that the `GhostCursor` must enforce is that apart from the currently mutable
+//! elemen
