@@ -30,4 +30,4 @@
 //! and of course retaining a reference to a dropped element is opening the door to undefined behavior.
 //!
 //! Hence, the very stringent invariant that the `GhostCursor` must enforce is that apart from the currently mutable
-//! elemen
+//! element, no reference to other elements with no _se
