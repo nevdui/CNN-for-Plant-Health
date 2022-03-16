@@ -32,4 +32,6 @@
 //! Hence, the very stringent invariant that the `GhostCursor` must enforce is that apart from the currently mutable
 //! element, no reference to other elements with no _separate_ anchoring ownership paths to the stack can be observed.
 //!
-//! Or, in short, the `GhostCursor` 
+//! Or, in short, the `GhostCursor` may allow either:
+//!
+//! -   Obser
