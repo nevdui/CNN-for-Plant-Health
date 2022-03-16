@@ -34,4 +34,5 @@
 //!
 //! Or, in short, the `GhostCursor` may allow either:
 //!
-//! -   Observing multiple immutable references at
+//! -   Observing multiple immutable references at a time.
+//! -   Or observing a sing
