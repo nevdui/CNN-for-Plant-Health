@@ -37,3 +37,4 @@
 //! -   Observing multiple immutable references at a time.
 //! -   Or observing a single mutable reference at a time.
 //!
+//! A familiar restriction 
