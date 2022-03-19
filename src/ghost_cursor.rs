@@ -39,4 +39,6 @@
 //!
 //! A familiar restriction for Rust programmers.
 
-use core::ptr
+use core::ptr::NonNull;
+
+use super::{GhostCell, G
