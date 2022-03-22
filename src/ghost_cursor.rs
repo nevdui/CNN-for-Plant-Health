@@ -43,4 +43,5 @@ use core::ptr::NonNull;
 
 use super::{GhostCell, GhostToken};
 
-/// A `GhostCursor`, to navigate 
+/// A `GhostCursor`, to navigate across a web of `GhostCell`s.
+pub struct
