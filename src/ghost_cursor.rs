@@ -45,4 +45,5 @@ use super::{GhostCell, GhostToken};
 
 /// A `GhostCursor`, to navigate across a web of `GhostCell`s.
 pub struct GhostCursor<'a, 'brand, T: ?Sized> {
-    token: NonNull<GhostT
+    token: NonNull<GhostToken<'brand>>,
+    cell: O
