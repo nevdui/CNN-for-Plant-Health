@@ -50,4 +50,4 @@ pub struct GhostCursor<'a, 'brand, T: ?Sized> {
 }
 
 impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
-    
+    /// Creates a new instance of the cu
