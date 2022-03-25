@@ -49,4 +49,5 @@ pub struct GhostCursor<'a, 'brand, T: ?Sized> {
     cell: Option<&'a GhostCell<'brand, T>>,
 }
 
-impl<'a, 'brand, T: ?S
+impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
+    
