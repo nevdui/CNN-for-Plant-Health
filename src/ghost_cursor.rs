@@ -54,4 +54,7 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     pub fn new(token: &'a mut GhostToken<'brand>, cell: Option<&'a GhostCell<'brand, T>>) -> Self {
         let token = NonNull::from(token);
 
-        Self { 
+        Self { token, cell }
+    }
+
+    /// Retur
