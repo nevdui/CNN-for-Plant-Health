@@ -51,4 +51,5 @@ pub struct GhostCursor<'a, 'brand, T: ?Sized> {
 
 impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     /// Creates a new instance of the cursor.
-    pub fn new(token: &'a mut GhostToken<'brand>, cell: Option<&'a GhostCell<'brand
+    pub fn new(token: &'a mut GhostToken<'brand>, cell: Option<&'a GhostCell<'brand, T>>) -> Self {
+        let token = NonN
