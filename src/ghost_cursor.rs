@@ -57,4 +57,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
         Self { token, cell }
     }
 
-    /// Retur
+    /// Returns a mutable reference to the curr
