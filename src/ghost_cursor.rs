@@ -59,4 +59,6 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
 
     /// Returns a mutable reference to the current element, if any.
     ///
-    /
+    /// #   Safety
+    ///
+    /// 
