@@ -61,4 +61,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///
     /// #   Safety
     ///
-    /// 
+    /// The token is still mutably borrowed for as lo
