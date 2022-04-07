@@ -65,4 +65,6 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     pub fn into_inner(self) -> Option<&'a mut T> {
         //  Safety:
         //  -   `self` is not borrowed, therefore the token is not borrowed.
-        //  -   The lifetime of the result ensures that the token remains mutably borrowed for as long as the res
+        //  -   The lifetime of the result ensures that the token remains mutably borrowed for as long as the result
+        //      exists.
+   
