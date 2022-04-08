@@ -67,4 +67,6 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
         //  -   `self` is not borrowed, therefore the token is not borrowed.
         //  -   The lifetime of the result ensures that the token remains mutably borrowed for as long as the result
         //      exists.
-        let token = unsafe { as_mut(se
+        let token = unsafe { as_mut(self.token) };
+
+        self.cell.
