@@ -69,4 +69,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
         //      exists.
         let token = unsafe { as_mut(self.token) };
 
-        self.cell.
+        self.cell.map(move |cell| cell.borrow_mut(token
