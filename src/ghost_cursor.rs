@@ -72,4 +72,6 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
         self.cell.map(move |cell| cell.borrow_mut(token))
     }
 
-    /// Returns the token a
+    /// Returns the token and currently pointed to cell.
+    ///
+ 
