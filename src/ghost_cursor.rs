@@ -74,4 +74,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
 
     /// Returns the token and currently pointed to cell.
     ///
- 
+    /// #   Safety
+    ///
