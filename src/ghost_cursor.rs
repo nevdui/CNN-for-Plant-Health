@@ -76,3 +76,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///
     /// #   Safety
     ///
+    /// The token is still m
