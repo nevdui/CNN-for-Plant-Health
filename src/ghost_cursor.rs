@@ -76,4 +76,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///
     /// #   Safety
     ///
-    /// The token is still m
+    /// The token is still mutably borrowed for as long as the retu
