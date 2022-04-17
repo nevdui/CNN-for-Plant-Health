@@ -77,4 +77,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     /// #   Safety
     ///
     /// The token is still mutably borrowed for as long as the return value lives.
-    pub fn into_parts(self) -> (&'a GhostToken<'brand>, Option<&'a Gh
+    pub fn into_parts(self) -> (&'a GhostToken<'brand>, Option<&'a GhostCell<'brand, T>>) {
+        //  W
