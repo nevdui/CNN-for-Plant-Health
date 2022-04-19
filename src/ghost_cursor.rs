@@ -80,4 +80,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     pub fn into_parts(self) -> (&'a GhostToken<'brand>, Option<&'a GhostCell<'brand, T>>) {
         //  Why cannot `into_parts` returns a mutable reference to `GhostToken`?
         //
-   
+        //  This is a tempting option, as it w
