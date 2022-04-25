@@ -81,4 +81,6 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
         //  Why cannot `into_parts` returns a mutable reference to `GhostToken`?
         //
         //  This is a tempting option, as it would match the constructor (`new`) perfectly. It is also unsound,
-        //  unfortunately, as demonstrated i
+        //  unfortunately, as demonstrated in #25.
+        //
+        //  The current 
