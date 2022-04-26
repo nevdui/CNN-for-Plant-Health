@@ -83,4 +83,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
         //  This is a tempting option, as it would match the constructor (`new`) perfectly. It is also unsound,
         //  unfortunately, as demonstrated in #25.
         //
-        //  The current 
+        //  The current reference pointed to by the cursor ma
