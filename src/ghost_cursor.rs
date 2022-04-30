@@ -85,4 +85,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
         //
         //  The current reference pointed to by the cursor may be owned (transitively) by another `GhostCell`.
         //  Returning a mutable reference to the `GhostToken` allows mutating this other `GhostCell` in a way that may
-     
+        //  destroy (and free), the `GhostCell`
