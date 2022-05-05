@@ -87,4 +87,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
         //  Returning a mutable reference to the `GhostToken` allows mutating this other `GhostCell` in a way that may
         //  destroy (and free), the `GhostCell` this returned reference refers to, thereby allowing a use-after-free.
         //
-        //  Therefore, this function needs to choose between returning a mutab
+        //  Therefore, this function needs to choose between returning a mutable reference to the token or returning
+   
