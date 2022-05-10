@@ -91,4 +91,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
         //  a reference to the `GhostCell`; it cannot do both at once, not safely.
 
         //  Safety:
-        // 
+        //  -   `self` is not borrowed, therefore th
