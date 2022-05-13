@@ -92,4 +92,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
 
         //  Safety:
         //  -   `self` is not borrowed, therefore the token is not borrowed.
-        //  -   The lifetime of the result ensures that the token and cell remain borr
+        //  -   The lifetime of the result ensures that the token and cell remain borrowed for as long as the result
+        //
