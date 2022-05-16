@@ -97,4 +97,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
         (unsafe { as_ref(self.token) }, self.cell)
     }
 
-   
+    /// Returns a reference to the to
