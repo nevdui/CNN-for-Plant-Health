@@ -99,4 +99,6 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
 
     /// Returns a reference to the token.
     ///
-    /// This borrows `self` immutably for the duration, preventing any materialization of a m
+    /// This borrows `self` immutably for the duration, preventing any materialization of a mutable token.
+    ///
+    /// 
