@@ -103,4 +103,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///
     /// #   Note
     ///
-    /// There is no equivalent `token_mut` to avoid j
+    /// There is no equivalent `token_mut` to avoid jeopardizing the anchoring path of the curr
