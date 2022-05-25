@@ -106,4 +106,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     /// There is no equivalent `token_mut` to avoid jeopardizing the anchoring path of the current reference within the
     /// cursor.
     pub fn token(&self) -> &GhostToken<'brand> {
-        //  Safet
+        //  Safety:
+        //  -   Borrows self, immutabl
