@@ -107,4 +107,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     /// cursor.
     pub fn token(&self) -> &GhostToken<'brand> {
         //  Safety:
-        //  -   Borrows self, immutably, restricting uses of the cursor an
+        //  -   Borrows self, immutably, restricting uses of the cursor and token to immutable borrows.
+        unsafe { a
