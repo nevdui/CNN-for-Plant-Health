@@ -115,4 +115,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///
     /// #   Example
     ///
-  
+    /// ```
+    /// use ghost_cell
