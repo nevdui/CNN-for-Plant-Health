@@ -116,4 +116,6 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     /// #   Example
     ///
     /// ```
-    /// use ghost_cell::{GhostCell, GhostCursor, GhostToke
+    /// use ghost_cell::{GhostCell, GhostCursor, GhostToken};
+    ///
+    /// GhostToken::new(|
