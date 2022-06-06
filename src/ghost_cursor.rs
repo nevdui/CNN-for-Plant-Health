@@ -121,4 +121,6 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     /// GhostToken::new(|mut token| {
     ///     let cell = GhostCell::new(42);
     ///
-    ///     let cursor = GhostCursor::new(&mut toke
+    ///     let cursor = GhostCursor::new(&mut token, Some(&cell));
+    ///
+    ///
