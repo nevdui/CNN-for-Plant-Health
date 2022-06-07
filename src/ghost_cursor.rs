@@ -123,4 +123,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///
     ///     let cursor = GhostCursor::new(&mut token, Some(&cell));
     ///
-    ///     assert_eq!(Some(
+    ///     assert_eq!(Some(&42), cursor.borrow());
+    /// });
