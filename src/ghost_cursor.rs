@@ -126,4 +126,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///     assert_eq!(Some(&42), cursor.borrow());
     /// });
     /// ```
-    pub fn borrow
+    pub fn borrow(&self) -> Option<&T> {
+     
