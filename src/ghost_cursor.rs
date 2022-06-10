@@ -128,4 +128,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     /// ```
     pub fn borrow(&self) -> Option<&T> {
         //  Safety:
-        //  -   Borrows `self`, ther
+        //  -   Borrows `self`, therefore ensuring that no mutable borrow of the 
