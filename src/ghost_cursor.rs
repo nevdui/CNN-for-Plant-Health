@@ -132,3 +132,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
         //  -   Restricts the lifetime of `token` to that of `self`.
         let token = unsafe { as_ref(self.token) };
 
+        self.cell.map(|cell| cell.borr
