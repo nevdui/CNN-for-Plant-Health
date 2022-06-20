@@ -135,4 +135,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
         self.cell.map(|cell| cell.borrow(token))
     }
 
-    /// R
+    /// Returns a mutable reference to the inne
