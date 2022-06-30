@@ -147,4 +147,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///
     ///     let mut cursor = GhostCursor::new(&mut token, Some(&cell));
     ///
-    ///  
+    ///     if let Some(r) = cursor.bo
