@@ -150,4 +150,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///     if let Some(r) = cursor.borrow_mut() {
     ///         *r = 33;
     ///     }
-    /
+    ///
+    ///     assert_eq!(Some(&33), cu
