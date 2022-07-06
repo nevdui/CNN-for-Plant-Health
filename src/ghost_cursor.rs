@@ -151,4 +151,6 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///         *r = 33;
     ///     }
     ///
-    ///     assert_eq!(Some(&33), cu
+    ///     assert_eq!(Some(&33), cursor.borrow());
+    /// });
+    ///
