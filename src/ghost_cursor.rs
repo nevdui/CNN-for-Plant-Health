@@ -154,4 +154,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///     assert_eq!(Some(&33), cursor.borrow());
     /// });
     /// ```
-    pub fn borrow_mut(&mut s
+    pub fn borrow_mut(&mut self) -> Option<&mut T> {
+   
