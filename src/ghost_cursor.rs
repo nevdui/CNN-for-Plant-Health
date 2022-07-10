@@ -155,4 +155,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     /// });
     /// ```
     pub fn borrow_mut(&mut self) -> Option<&mut T> {
-   
+        //  Safety:
+        //  -   B
