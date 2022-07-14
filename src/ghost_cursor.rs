@@ -157,4 +157,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     pub fn borrow_mut(&mut self) -> Option<&mut T> {
         //  Safety:
         //  -   Borrows `self` mutably, therefore ensuring that no other borrow of the token exists.
-        //  -   Restricts the lif
+        //  -   Restricts the lifetime of `token` to that of `s
