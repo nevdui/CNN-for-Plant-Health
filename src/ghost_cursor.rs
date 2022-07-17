@@ -158,4 +158,6 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
         //  Safety:
         //  -   Borrows `self` mutably, therefore ensuring that no other borrow of the token exists.
         //  -   Restricts the lifetime of `token` to that of `self.`
-        let token = unsafe { as_mu
+        let token = unsafe { as_mut(self.token) };
+
+        self.ce
