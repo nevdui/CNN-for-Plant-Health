@@ -163,4 +163,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
         self.cell.map(move |cell| cell.borrow_mut(token))
     }
 
-    /// Attempts to move fro
+    /// Attempts to move from the current cell to anoth
