@@ -166,4 +166,6 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     /// Attempts to move from the current cell to another cell, derived from it.
     ///
     /// Returns an error if either:
-    /// -   There is no current ce
+    /// -   There is no current cell.
+    /// -   `fun` returns no cell.
+  
