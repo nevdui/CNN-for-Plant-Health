@@ -170,3 +170,6 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     /// -   `fun` returns no cell.
     ///
     /// In case of an error, the current cell is not modified.
+    ///
+    /// #   Example
+    /
