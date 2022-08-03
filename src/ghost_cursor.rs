@@ -172,4 +172,6 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     /// In case of an error, the current cell is not modified.
     ///
     /// #   Example
-    /
+    ///
+    /// ```
+    /// use ghost_ce
