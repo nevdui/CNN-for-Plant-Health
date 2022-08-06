@@ -176,4 +176,6 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     /// ```
     /// use ghost_cell::{GhostCell, GhostCursor, GhostToken};
     ///
-    /// struct Link<'brand>(GhostCell<'brand, Option<Box<Self
+    /// struct Link<'brand>(GhostCell<'brand, Option<Box<Self>>>);
+    ///
+    /// GhostTok
