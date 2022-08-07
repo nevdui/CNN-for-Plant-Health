@@ -179,4 +179,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     /// struct Link<'brand>(GhostCell<'brand, Option<Box<Self>>>);
     ///
     /// GhostToken::new(|mut token| {
-    ///     let 
+    ///     let three = Link(GhostCell::new(None));
+ 
