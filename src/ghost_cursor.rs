@@ -182,4 +182,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///     let three = Link(GhostCell::new(None));
     ///     let two = Link(GhostCell::new(None));
     ///     let one = Link(GhostCell::new(Some(Box::new(two))));
-    /
+    ///
+    ///     let mut cursor = 
