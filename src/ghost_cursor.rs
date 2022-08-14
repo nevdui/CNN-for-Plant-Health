@@ -181,4 +181,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     /// GhostToken::new(|mut token| {
     ///     let three = Link(GhostCell::new(None));
     ///     let two = Link(GhostCell::new(None));
-    ///     let one = Link(GhostCell::new(Som
+    ///     let one = Link(GhostCell::new(Some(Box::new(two))));
+    /
