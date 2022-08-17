@@ -183,4 +183,6 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///     let two = Link(GhostCell::new(None));
     ///     let one = Link(GhostCell::new(Some(Box::new(two))));
     ///
-    ///     let mut cursor = GhostCursor::new(&mut token, Some(&one.0)
+    ///     let mut cursor = GhostCursor::new(&mut token, Some(&one.0));
+    ///
+    ///     cursor.move_mut(|o
