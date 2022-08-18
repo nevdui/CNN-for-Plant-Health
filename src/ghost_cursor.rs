@@ -185,4 +185,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///
     ///     let mut cursor = GhostCursor::new(&mut token, Some(&one.0));
     ///
-    ///     cursor.move_mut(|option| option.as_ref().map(|boxed
+    ///     cursor.move_mut(|option| option.as_ref().map(|boxed| &boxed.0))
+    ///         .ex
