@@ -188,4 +188,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///     cursor.move_mut(|option| option.as_ref().map(|boxed| &boxed.0))
     ///         .expect("one.0 points to two!");
     ///
-    ///     if let Some(two) = cursor.borrow_mut() 
+    ///     if let Some(two) = cursor.borrow_mut() {
+    ///         let previous = st
