@@ -190,4 +190,7 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///
     ///     if let Some(two) = cursor.borrow_mut() {
     ///         let previous = std::mem::replace(two, Some(Box::new(three)));
-    ///         assert!(previous.is_
+    ///         assert!(previous.is_none());
+    ///     }
+    /// });
+ 
