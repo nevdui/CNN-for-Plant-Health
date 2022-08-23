@@ -189,4 +189,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///         .expect("one.0 points to two!");
     ///
     ///     if let Some(two) = cursor.borrow_mut() {
-    ///         let previous = std::mem::replace(two, Some(Box::new(thre
+    ///         let previous = std::mem::replace(two, Some(Box::new(three)));
+    ///         assert!(previous.is_
