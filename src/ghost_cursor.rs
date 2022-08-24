@@ -193,4 +193,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///         assert!(previous.is_none());
     ///     }
     /// });
- 
+    /// ```
+    #[allow(clippy::r
