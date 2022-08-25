@@ -194,4 +194,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///     }
     /// });
     /// ```
-    #[allow(clippy::r
+    #[allow(clippy::result_unit_err)]
+    pub fn mov
