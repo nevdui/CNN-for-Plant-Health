@@ -195,4 +195,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     /// });
     /// ```
     #[allow(clippy::result_unit_err)]
-    pub fn mov
+    pub fn move_mut<F>(&mut self, fun: F) -> Result<
