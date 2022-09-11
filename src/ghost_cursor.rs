@@ -209,4 +209,7 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
 
         self.cell = Some(cell);
 
- 
+        Ok(())
+    }
+
+    /// Attempts t
