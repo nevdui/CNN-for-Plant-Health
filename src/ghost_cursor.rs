@@ -213,4 +213,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     }
 
     /// Attempts to move from the current cell to another cell, derived from it.
-  
+    ///
+    /// Returns an error if ei
