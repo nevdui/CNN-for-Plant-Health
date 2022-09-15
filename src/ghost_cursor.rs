@@ -212,4 +212,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
         Ok(())
     }
 
-    /// Attempts t
+    /// Attempts to move from the current cell to ano
