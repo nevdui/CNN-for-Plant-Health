@@ -216,4 +216,6 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///
     /// Returns an error if either:
     /// -   There is no current cell.
-    /// -   `fun` retu
+    /// -   `fun` returns no cell.
+    ///
+    /// In 
