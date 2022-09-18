@@ -220,4 +220,7 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///
     /// In case of an error, the current cursor is returned.
     ///
-    /// #   
+    /// #   Example
+    ///
+    /// ```
+    
