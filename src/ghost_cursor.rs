@@ -223,4 +223,6 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     /// #   Example
     ///
     /// ```
-    /// use ghost_cell::{GhostCell, GhostCurso
+    /// use ghost_cell::{GhostCell, GhostCursor, GhostToken};
+    ///
+    /// struct Lea
