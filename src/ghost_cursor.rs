@@ -225,4 +225,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     /// ```
     /// use ghost_cell::{GhostCell, GhostCursor, GhostToken};
     ///
-    /// struct Lea
+    /// struct Leaf<'brand>(GhostCell<'brand, String
