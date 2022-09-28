@@ -228,4 +228,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     /// struct Leaf<'brand>(GhostCell<'brand, String>);
     ///
     /// GhostToken::new(|mut token| {
-    ///     let le
+    ///     let leaf = Leaf(GhostCell::new("Terminal".to_st
