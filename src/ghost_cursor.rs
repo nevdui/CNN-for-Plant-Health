@@ -229,4 +229,6 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///
     /// GhostToken::new(|mut token| {
     ///     let leaf = Leaf(GhostCell::new("Terminal".to_string()));
-    ///     let inner = Ghost
+    ///     let inner = GhostCell::new(leaf);
+    ///
+    ///     let cursor
