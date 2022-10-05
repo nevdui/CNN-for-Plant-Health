@@ -233,4 +233,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///
     ///     let cursor = GhostCursor::new(&mut token, Some(&inner));
     ///
-    ///     let mut cursor = cursor.move_into(
+    ///     let mut cursor = cursor.move_into(|leaf| Some(&leaf.0))
+    ///       
