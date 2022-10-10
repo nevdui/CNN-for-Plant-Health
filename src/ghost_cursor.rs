@@ -236,4 +236,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///     let mut cursor = cursor.move_into(|leaf| Some(&leaf.0))
     ///         .or(Err(()))
     ///         .expect("inner.0 points to leaf");
-   
+    ///
+    ///     if let Some(s
