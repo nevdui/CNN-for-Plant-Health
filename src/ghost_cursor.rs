@@ -238,4 +238,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///         .expect("inner.0 points to leaf");
     ///
     ///     if let Some(s) = cursor.borrow_mut() {
-    //
+    ///         let previous = std::mem::replac
