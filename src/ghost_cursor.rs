@@ -239,4 +239,7 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///
     ///     if let Some(s) = cursor.borrow_mut() {
     ///         let previous = std::mem::replace(s, "Station".to_string());
-    ///         assert_eq!("Terminal", p
+    ///         assert_eq!("Terminal", previous);
+    ///     }
+    /// });
+  
