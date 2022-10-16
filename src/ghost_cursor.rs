@@ -242,4 +242,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///         assert_eq!("Terminal", previous);
     ///     }
     /// });
-  
+    /// ```
+    pub fn move_into<U, F>(mut
