@@ -243,4 +243,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     ///     }
     /// });
     /// ```
-    pub fn move_into<U, F>(mut
+    pub fn move_into<U, F>(mut self, fun: F) -> Result<GhostCurso
