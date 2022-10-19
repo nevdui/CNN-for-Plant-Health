@@ -245,4 +245,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     /// ```
     pub fn move_into<U, F>(mut self, fun: F) -> Result<GhostCursor<'a, 'brand, U>, Self>
     where
-  
+        F: FnOnce(&T) -> Opt
