@@ -249,4 +249,7 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     {
         let result = self.move_into_impl(fun);
 
-     
+        result.or(Err(self))
+    }
+
+    // 
