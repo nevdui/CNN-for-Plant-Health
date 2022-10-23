@@ -252,4 +252,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
         result.or(Err(self))
     }
 
-    // 
+    //  Internal.
+    fn move_into_impl<U, F>(&mu
