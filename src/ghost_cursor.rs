@@ -253,4 +253,6 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     }
 
     //  Internal.
-    fn move_into_impl<U, F>(&mut self, fun: F) -> Result<GhostCur
+    fn move_into_impl<U, F>(&mut self, fun: F) -> Result<GhostCursor<'a, 'brand, U>, ()>
+    where
+        F: 
