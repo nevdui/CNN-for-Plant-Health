@@ -257,4 +257,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
     where
         F: FnOnce(&T) -> Option<&GhostCell<'brand, U>>,
     {
-        //  Safet
+        //  Safety:
+        //  -   Borrows `self` mutabl
