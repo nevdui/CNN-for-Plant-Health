@@ -258,4 +258,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
         F: FnOnce(&T) -> Option<&GhostCell<'brand, U>>,
     {
         //  Safety:
-        //  -   Borrows `self` mutably, therefore ensuring that no borrow 
+        //  -   Borrows `self` mutably, therefore ensuring that no borrow of the token exists.
+        //  -   
