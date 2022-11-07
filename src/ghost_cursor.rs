@@ -263,4 +263,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
         let token_mut = unsafe { as_mut(self.token) };
 
         let cell = self.cell.ok_or(())?;
-  
+        let cell = fun(cell.borrow
