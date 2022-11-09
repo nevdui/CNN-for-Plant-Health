@@ -265,4 +265,4 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
         let cell = self.cell.ok_or(())?;
         let cell = fun(cell.borrow(token_mut)).ok_or(())?;
 
-    
+        Ok(GhostCursor { token: self.token, ce
