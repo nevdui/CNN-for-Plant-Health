@@ -268,3 +268,7 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
         Ok(GhostCursor { token: self.token, cell: Some(cell) })
     }
 }
+
+//
+//  Implementation
+//
