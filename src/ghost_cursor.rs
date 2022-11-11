@@ -272,3 +272,5 @@ impl<'a, 'brand, T: ?Sized> GhostCursor<'a, 'brand, T> {
 //
 //  Implementation
 //
+
+unsafe fn as_ref<'a, T: ?Sized>(ptr: Non
