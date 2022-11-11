@@ -277,4 +277,5 @@ unsafe fn as_ref<'a, T: ?Sized>(ptr: NonNull<T>) -> &'a T {
     &*ptr.as_ptr()
 }
 
-unsafe fn as_mut<'a, T: ?Sized>(ptr: NonNul
+unsafe fn as_mut<'a, T: ?Sized>(ptr: NonNull<T>) -> &'a mut T {
+    &mut *ptr.as_ptr
