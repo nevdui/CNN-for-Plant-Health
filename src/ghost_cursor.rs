@@ -285,4 +285,4 @@ unsafe fn as_mut<'a, T: ?Sized>(ptr: NonNull<T>) -> &'a mut T {
 pub mod compile_tests {
 
 /// ```compile_fail,E0502
-/// use 
+/// use ghost_cell::{GhostCell, 
