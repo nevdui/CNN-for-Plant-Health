@@ -286,4 +286,6 @@ pub mod compile_tests {
 
 /// ```compile_fail,E0502
 /// use ghost_cell::{GhostCell, GhostCursor, GhostToken};
-//
+///
+/// GhostToken::new(|mut token| {
+///    
