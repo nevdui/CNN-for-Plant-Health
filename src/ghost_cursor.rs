@@ -288,4 +288,5 @@ pub mod compile_tests {
 /// use ghost_cell::{GhostCell, GhostCursor, GhostToken};
 ///
 /// GhostToken::new(|mut token| {
-///    
+///     let cell = GhostCell::new(1);
+///     let 
