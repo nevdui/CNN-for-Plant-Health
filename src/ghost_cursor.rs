@@ -291,4 +291,5 @@ pub mod compile_tests {
 ///     let cell = GhostCell::new(1);
 ///     let cursor = GhostCursor::new(&mut token, Some(&cell));
 ///
-///     assert_eq!(1, *
+///     assert_eq!(1, *cell.borrow(&token));
+///     assert_eq!(Som
