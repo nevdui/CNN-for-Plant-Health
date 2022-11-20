@@ -289,4 +289,6 @@ pub mod compile_tests {
 ///
 /// GhostToken::new(|mut token| {
 ///     let cell = GhostCell::new(1);
-///     let cursor = GhostCursor::new(&mut token, Some(
+///     let cursor = GhostCursor::new(&mut token, Some(&cell));
+///
+///     assert_eq!(1, *
