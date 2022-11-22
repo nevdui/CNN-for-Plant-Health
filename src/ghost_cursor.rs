@@ -295,4 +295,6 @@ pub mod compile_tests {
 ///     assert_eq!(Some(&1), cursor.borrow());
 /// })
 /// ```
-pub fn cursor_new_borrows
+pub fn cursor_new_borrows_token_mutably() {}
+
+/// ```compile_fa
