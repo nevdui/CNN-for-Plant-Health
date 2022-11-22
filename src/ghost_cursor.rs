@@ -294,4 +294,5 @@ pub mod compile_tests {
 ///     assert_eq!(1, *cell.borrow(&token));
 ///     assert_eq!(Some(&1), cursor.borrow());
 /// })
-/// `
+/// ```
+pub fn cursor_new_borrows
