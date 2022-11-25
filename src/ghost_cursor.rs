@@ -300,3 +300,4 @@ pub fn cursor_new_borrows_token_mutably() {}
 /// ```compile_fail,E0502
 /// use ghost_cell::{GhostCell, GhostCursor, GhostToken};
 ///
+/// GhostToken::new(|mut to
