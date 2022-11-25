@@ -297,4 +297,5 @@ pub mod compile_tests {
 /// ```
 pub fn cursor_new_borrows_token_mutably() {}
 
-/// ```compile_fa
+/// ```compile_fail,E0502
+/// use ghost_cell::{Ghos
