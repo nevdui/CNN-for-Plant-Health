@@ -301,4 +301,6 @@ pub fn cursor_new_borrows_token_mutably() {}
 /// use ghost_cell::{GhostCell, GhostCursor, GhostToken};
 ///
 /// GhostToken::new(|mut token| {
-///     let (one, two) = (Ghos
+///     let (one, two) = (GhostCell::new(1), GhostCell::new(2));
+///
+//
