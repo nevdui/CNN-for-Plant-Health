@@ -304,4 +304,5 @@ pub fn cursor_new_borrows_token_mutably() {}
 ///     let (one, two) = (GhostCell::new(1), GhostCell::new(2));
 ///
 ///     let cursor = GhostCursor::new(&mut token, Some(&one));
-///     if le
+///     if let Some(one) = cursor.into_inner() {
+/
