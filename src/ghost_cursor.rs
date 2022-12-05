@@ -305,4 +305,5 @@ pub fn cursor_new_borrows_token_mutably() {}
 ///
 ///     let cursor = GhostCursor::new(&mut token, Some(&one));
 ///     if let Some(one) = cursor.into_inner() {
-///         assert_eq!(2, *two.borrow(&token));  //  Fail, token stil
+///         assert_eq!(2, *two.borrow(&token));  //  Fail, token still borrowed by `one`.
+///         *one = 3;
