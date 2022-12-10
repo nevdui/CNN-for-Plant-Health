@@ -313,4 +313,4 @@ pub fn cursor_new_borrows_token_mutably() {}
 pub fn cursor_into_inner_leaves_token_borrowed_mutably() {}
 
 /// ```compile_fail,E0499
-/// use g
+/// use ghost_cell::{GhostCell, GhostCursor, Gh
