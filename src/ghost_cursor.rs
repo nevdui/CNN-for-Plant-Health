@@ -310,4 +310,4 @@ pub fn cursor_new_borrows_token_mutably() {}
 ///     }
 /// })
 /// ```
-pub 
+pub fn cursor_into_inner_leaves_token_borr
