@@ -315,4 +315,5 @@ pub fn cursor_into_inner_leaves_token_borrowed_mutably() {}
 /// ```compile_fail,E0499
 /// use ghost_cell::{GhostCell, GhostCursor, GhostToken};
 ///
-/// GhostToken::new(|m
+/// GhostToken::new(|mut token| {
+///     let (one, two) = (
