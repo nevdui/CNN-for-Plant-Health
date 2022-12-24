@@ -319,4 +319,5 @@ pub fn cursor_into_inner_leaves_token_borrowed_mutably() {}
 ///     let (one, two) = (GhostCell::new(1), GhostCell::new(2));
 ///
 ///     let cursor = GhostCursor::new(&mut token, Some(&one));
-///     let aliased_token = cursor.into_part
+///     let aliased_token = cursor.into_parts().0;
+///     *two.borrow_mut(&m
