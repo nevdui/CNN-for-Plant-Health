@@ -320,4 +320,5 @@ pub fn cursor_into_inner_leaves_token_borrowed_mutably() {}
 ///
 ///     let cursor = GhostCursor::new(&mut token, Some(&one));
 ///     let aliased_token = cursor.into_parts().0;
-///     *two.borrow_mut(&mut token) = 4;   //  Fail, token
+///     *two.borrow_mut(&mut token) = 4;   //  Fail, token still borrowed by `aliased_token`.
+///
