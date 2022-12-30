@@ -324,4 +324,4 @@ pub fn cursor_into_inner_leaves_token_borrowed_mutably() {}
 ///     assert_eq!(1, *one.borrow(aliased_token));
 /// })
 /// ```
-pub fn cursor_into
+pub fn cursor_into_parts_first_part_leaves_token_bo
