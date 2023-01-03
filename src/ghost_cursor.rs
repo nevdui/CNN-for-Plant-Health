@@ -326,4 +326,5 @@ pub fn cursor_into_inner_leaves_token_borrowed_mutably() {}
 /// ```
 pub fn cursor_into_parts_first_part_leaves_token_borrowed_mutably() {}
 
-/// ```com
+/// ```compile_fail,E0502
+/// use ghost_cell::{Gh
