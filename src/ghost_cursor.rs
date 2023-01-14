@@ -332,4 +332,5 @@ pub fn cursor_into_parts_first_part_leaves_token_borrowed_mutably() {}
 /// GhostToken::new(|mut token| {
 ///     let (one, two) = (GhostCell::new(1), GhostCell::new(2));
 ///
-///     let cursor = GhostCursor::new(&mut t
+///     let cursor = GhostCursor::new(&mut token, Some(&one));
+///     if 
