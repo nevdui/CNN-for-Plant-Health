@@ -334,4 +334,4 @@ pub fn cursor_into_parts_first_part_leaves_token_borrowed_mutably() {}
 ///
 ///     let cursor = GhostCursor::new(&mut token, Some(&one));
 ///     if let Some(one) = cursor.into_parts().1 {
-//
+///         *two.borrow_mut(&mut token)
