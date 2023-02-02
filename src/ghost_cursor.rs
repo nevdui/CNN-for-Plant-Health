@@ -339,4 +339,4 @@ pub fn cursor_into_parts_first_part_leaves_token_borrowed_mutably() {}
 ///     }
 /// })
 /// ```
-p
+pub fn cursor_into_parts_second_par
