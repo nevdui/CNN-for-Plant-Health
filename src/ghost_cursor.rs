@@ -343,4 +343,4 @@ pub fn cursor_into_parts_second_part_leaves_token_borrowed_mutably() {}
 
 /// ```compile_fail,E0521
 /// use core::cell::Cell;
-/// use ghost_cell
+/// use ghost_cell::{GhostCell, GhostCursor, GhostTo
