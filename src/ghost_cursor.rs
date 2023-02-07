@@ -346,4 +346,6 @@ pub fn cursor_into_parts_second_part_leaves_token_borrowed_mutably() {}
 /// use ghost_cell::{GhostCell, GhostCursor, GhostToken};
 ///
 /// GhostToken::new(|mut token| {
-///     let cell = GhostCell::new(1)
+///     let cell = GhostCell::new(1);
+///     let leak = Cell::new(None);
+///     l
