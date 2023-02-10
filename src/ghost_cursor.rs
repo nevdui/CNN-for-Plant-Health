@@ -350,4 +350,4 @@ pub fn cursor_into_parts_second_part_leaves_token_borrowed_mutably() {}
 ///     let leak = Cell::new(None);
 ///     let mut cursor = GhostCursor::new(&mut token, Some(&cell));
 ///
-///   
+///     let _ = cursor.move_mut(|cel
