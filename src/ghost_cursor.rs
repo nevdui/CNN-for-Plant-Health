@@ -352,4 +352,7 @@ pub fn cursor_into_parts_second_part_leaves_token_borrowed_mutably() {}
 ///
 ///     let _ = cursor.move_mut(|cell_ref| {
 ///         leak.set(Some(cell_ref));   //  Fail, `cell_ref` cannot escape the closure body.
-///         N
+///         None
+///     });
+///
+///     //  If `ce
