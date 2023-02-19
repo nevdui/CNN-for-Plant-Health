@@ -355,4 +355,4 @@ pub fn cursor_into_parts_second_part_leaves_token_borrowed_mutably() {}
 ///         None
 ///     });
 ///
-///     //  If `ce
+///     //  If `cell_ref` escaped, this w
