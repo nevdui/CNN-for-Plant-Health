@@ -355,4 +355,4 @@ pub fn cursor_into_parts_second_part_leaves_token_borrowed_mutably() {}
 ///         None
 ///     });
 ///
-///     //  If `cell_ref` escaped, this w
+///     //  If `cell_ref` escaped, this would be a shared reference whose va
