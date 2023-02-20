@@ -356,4 +356,5 @@ pub fn cursor_into_parts_second_part_leaves_token_borrowed_mutably() {}
 ///     });
 ///
 ///     //  If `cell_ref` escaped, this would be a shared reference whose value can change -- this is unsound.
-///     let cell_ref: &i32
+///     let cell_ref: &i32 = leak.get().unwrap();
+///     asse
