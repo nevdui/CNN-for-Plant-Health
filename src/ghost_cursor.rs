@@ -360,4 +360,6 @@ pub fn cursor_into_parts_second_part_leaves_token_borrowed_mutably() {}
 ///     assert_eq!(*cell_ref, 1);
 ///     *cursor.borrow_mut().unwrap() = 42;
 ///     assert_eq!(*cell_ref, 42);
-/// }
+/// })
+/// ```
+pub fn cursor_move_mut_noesc
