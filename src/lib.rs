@@ -26,3 +26,35 @@
 //!     let vec: Vec<_> = (0..n).map(|_| &cell).collect();
 //!
 //!     *vec[n / 2].borrow_mut(&mut token) = 33;
+//!
+//!     *cell.borrow(&token)
+//! });
+//!
+//! assert_eq!(33, value);
+//! ```
+
+//  Generic features.
+#![cfg_attr(not(test), no_std)]
+
+//  Lints.
+#![deny(missing_docs)]
+
+pub mod ghost_cell;
+
+pub use self::ghost_cell::{GhostCell, GhostToken};
+
+pub mod ghost_borrow;
+
+pub use self::ghost_borrow::GhostBorrow;
+
+#[cfg(feature = "experimental-multiple-mutable-borrows")]
+pub mod ghost_borrow_mut;
+
+#[cfg(feature = "experimental-multiple-mutable-borrows")]
+pub use self::ghost_borrow_mut::{GhostAliasingError, GhostBorrowMut};
+
+#[cfg(feature = "experimental-ghost-cursor")]
+pub mod ghost_cursor;
+
+#[cfg(feature = "experimental-ghost-cursor")]
+pub use self::ghost_cursor::GhostCursor;
